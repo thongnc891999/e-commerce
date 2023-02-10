@@ -1,0 +1,117 @@
+iframe {
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.contact {
+    display: flex;
+    padding-top: 2rem;
+
+    &__title {
+        display: block;
+        width: 100%;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #68ba8f;
+        padding-bottom: 3rem;
+        margin-top: 5rem;
+    }
+
+    &__left {
+        width: 50%;
+    }
+
+    &__right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        img {
+            width: 50%;
+            padding-bottom: 2rem;
+        }
+
+        p,
+        a {
+            font-size: 1.4rem;
+            padding-bottom: 1.6rem;
+        }
+
+        a {
+            font-style: italic;
+
+            &:hover {
+                color: #68ba8f;
+            }
+        }
+
+        .fas {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+
+        &--group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+
+            input {
+                width: 90%;
+                padding: 1rem;
+                font-size: 1.4rem;
+                border: 1px solid #e1e1e1;
+                border-radius: 2px;
+                margin: 1rem 0;
+            }
+
+            label {
+                font-size: 1.2rem;
+                color: #000000;
+
+                span {
+                    color: red;
+                }
+            }
+
+        }
+
+        &--btn {
+            display: flex;
+
+            justify-content: center;
+            margin-bottom: 5rem;
+        }
+    }
+
+    .btn {
+        display: block;
+        background-color: #68ba8f;
+        color: #ffffff;
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 1.3rem 3rem;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+    }
+
+}
+@media screen and (max-width:1023px) {
+
+    .contact {
+        flex-direction: column;
+    }
+    .contact__left {
+        width: 100%;
+    }
+    .contact__right {
+        width: 100%;
+    }
+}

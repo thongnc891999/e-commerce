@@ -1,0 +1,127 @@
+$text-color: #555555;
+$color-primary :#3fb771;
+$text-white: #ffffff;
+
+.comment {
+    &__title {
+        font-size: 1.8rem;
+        color: #363533;
+        font-weight: 600;
+    }
+
+    ul {
+        display: block;
+        width: 100%;
+
+        li {
+            display: block;
+            margin-left: 11rem;
+        }
+    }
+}
+
+.card__member {
+    border-top: 1px solid #e1e1e1;
+    display: inline-block;
+    padding: 4rem 0;
+
+    &--img {
+        float: left;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 3rem;
+
+        img {
+            display: block;
+            width: 30rem;
+            max-width: none;
+            margin-left: -12rem;
+
+        }
+    }
+
+    &--answer {
+        float: right;
+        margin: 3rem 1rem;
+        font-size: 1.3rem;
+        text-decoration: underline;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &--name {
+        font-size: 1.4rem;
+        color: #363533;
+        font-weight: 600;
+        margin-bottom: 1.4rem;
+    }
+
+    &--comment {
+        font-size: 1.2rem;
+        color: #898989;
+
+        padding-bottom: 1.2rem;
+    }
+
+    &--time {
+        font-style: italic;
+        font-size: 1.2rem;
+        color: #898989;
+    }
+
+}
+
+.form__comment{
+    input {
+        padding: 1rem 2rem;
+        border: 1px solid #e1e1e1;
+        border-radius: 2px;
+        width: 100%;
+    }
+
+    &--group {
+        width: 100%;
+        display: flex;
+        margin-bottom: 3rem;
+    }
+
+    input+input {
+        margin-left: 3rem;
+    }
+
+    &--comment {
+        text-align: start;
+        display: block;
+        height: 10rem;
+    }
+
+    .btn {
+        display: block;
+        color: $text-white;
+        background-color: #3fb771;
+        font-size: 1.4rem;
+        font-weight: 600;
+        justify-self: flex-end;
+        
+    }
+
+}
+@media screen and (max-width:1023px) {
+    html{
+        font-size: 59%;
+    }
+    .news__card--img {
+        height: auto;
+
+    }
+    .products__menu-vertical{
+        display: none;
+    }
+    .products__list{
+        width: 100%;
+    }
+}

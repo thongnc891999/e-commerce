@@ -1,0 +1,135 @@
+$text-color: #555555;
+$color-primary :#3fb771;
+$text-white: #ffffff;
+
+.news {
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-bottom: 4rem;
+
+
+        &--img {
+            width: 45%;
+            height: 7rem;
+            display: block;
+            overflow: hidden;
+            z-index: 1000;
+            position: relative;
+
+            img {
+                z-index: -1;
+                display: block;
+                max-width: 12rem;
+                position: absolute;
+            }
+        }
+
+        &--info {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            margin-top: 1rem;
+            color: #636363;
+        }
+    }
+}
+
+.blog {
+    &__tag {
+        display: flex;
+        flex-wrap: wrap;
+
+        &--item {
+            display: block;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            border: 1px solid #e1e1e1;
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+
+        &--active {
+            background-color: #3fb771;
+            color: #ebebeb;
+        }
+
+    }
+}
+
+.news {
+    &__card {
+        margin-bottom: 6rem;
+
+        &--title {
+            font-size: 1.8rem;
+            color: #636363;
+            font-weight: 300;
+
+            &:hover {
+                opacity: 0.7;
+
+                a {
+                    color: #3fb771;
+                }
+            }
+        }
+
+        &--info {
+            display: flex;
+            font-size: 1.2rem;
+            color: #c8c8c8;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+
+            .far {
+                padding-right: 0.6rem;
+                padding-top: 0.2rem;
+            }
+        }
+
+        &--inline {
+            display: flex;
+            margin-right: 1.5rem;
+        }
+
+        &--img {
+            display: block;
+            width: 100%;
+            height: 37.5rem;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        &--content {
+            font-size: 1.2rem;
+            color: #898989;
+            padding-bottom: 1.4rem;
+        }
+    }
+}
+@media screen and (max-width:1023px) {
+    .news__card--img {
+        height: auto;
+
+    }
+    .products__menu-vertical{
+        display: none;
+    }
+    .products__list{
+        width: 100%;
+    }
+
+    .products__btn-page{
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        margin-left: 1rem;
+    }
+}

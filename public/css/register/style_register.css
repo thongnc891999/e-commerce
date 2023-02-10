@@ -1,0 +1,107 @@
+.register {
+  display: block;
+  margin-top: 6rem;
+}
+
+.register__title {
+  display: block;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #68ba8f;
+  padding-bottom: 3rem;
+}
+
+.register__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.register__form--group {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.register__form--group input {
+  width: 90%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  margin: 1rem 0;
+}
+
+.register__form--group label {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.register__form--group label span {
+  color: red;
+}
+
+.register__form--notice {
+  font-size: 1.2rem;
+  margin-bottom: 6rem;
+}
+
+.register__form--btn {
+  display: inline-block;
+  margin-top: 6rem;
+  margin-bottom: 10rem;
+}
+
+.register__form--btn .btn {
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 1.3rem 3rem;
+  margin-right: 2rem;
+}
+
+.register__form--btn .btn:hover {
+  opacity: 0.7;
+}
+
+.register__form--btn .btn--back {
+  border: 1px solid;
+}
+
+.register__form--btn .btn--back:active {
+  border: 1px solid 3fb771;
+  color: #ffffff;
+  background-color: #3fb771;
+}
+
+.register__form--btn .btn--register {
+  color: #ffffff;
+  background-color: #3fb771;
+}
+
+.register__form--btn .btn--register:active {
+  border: 1px solid;
+  color: #3fb771;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 1023px) {
+  .register__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .register__form--group {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style_register.css.map */

@@ -1,0 +1,25 @@
+.register{
+    display: flex;
+    .register__form--notice{
+        width: 100%;
+        margin-bottom: 0;
+        a{
+            margin-left: 1rem;
+           font-style: italic;
+           color: #898989;
+        }
+    }
+    &__register{
+        margin-top: -6rem;
+        p{
+            font-size: 1.2rem;
+            color: #636363;
+        }
+    }
+}
+@media screen and (max-width: 1023px) {
+    .register{
+        flex-direction: column;
+    }
+       
+}

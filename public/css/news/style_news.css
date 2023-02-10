@@ -1,0 +1,117 @@
+.comment__title {
+  font-size: 1.8rem;
+  color: #363533;
+  font-weight: 600;
+}
+
+.comment ul {
+  display: block;
+  width: 100%;
+}
+
+.comment ul li {
+  display: block;
+  margin-left: 11rem;
+}
+
+.card__member {
+  border-top: 1px solid #e1e1e1;
+  display: inline-block;
+  padding: 4rem 0;
+}
+
+.card__member--img {
+  float: left;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 3rem;
+}
+
+.card__member--img img {
+  display: block;
+  width: 30rem;
+  max-width: none;
+  margin-left: -12rem;
+}
+
+.card__member--answer {
+  float: right;
+  margin: 3rem 1rem;
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+
+.card__member--answer:hover {
+  opacity: 0.6;
+}
+
+.card__member--name {
+  font-size: 1.4rem;
+  color: #363533;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.card__member--comment {
+  font-size: 1.2rem;
+  color: #898989;
+  padding-bottom: 1.2rem;
+}
+
+.card__member--time {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #898989;
+}
+
+.form__comment input {
+  padding: 1rem 2rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.form__comment--group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.form__comment input + input {
+  margin-left: 3rem;
+}
+
+.form__comment--comment {
+  text-align: start;
+  display: block;
+  height: 10rem;
+}
+
+.form__comment .btn {
+  display: block;
+  color: #ffffff;
+  background-color: #3fb771;
+  font-size: 1.4rem;
+  font-weight: 600;
+  justify-self: flex-end;
+}
+
+@media screen and (max-width: 1023px) {
+  html {
+    font-size: 59%;
+  }
+  .news__card--img {
+    height: auto;
+  }
+  .products__menu-vertical {
+    display: none;
+  }
+  .products__list {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style_news.css.map */

@@ -1,0 +1,327 @@
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products__title {
+  color: #59b586;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #e1e1e1;
+  margin: 1.6rem 0;
+}
+
+.products__title p {
+  padding-bottom: 1.4rem;
+  border-bottom: 3px solid #3fb771;
+}
+
+.products__menu-vertical {
+  display: block;
+  width: 26%;
+  font-size: 1.2rem;
+  margin: 1.5rem;
+}
+
+.products__menu--item {
+  color: #898989;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.products__menu--item ul {
+  display: none;
+}
+
+.products__menu--item .fas {
+  font-size: 1rem;
+}
+
+.products__menu--link:hover {
+  color: #3fb771;
+}
+
+.products__color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products__color--item::before {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+
+.products__color--item {
+  padding-left: 2.8rem;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+.products__color--col {
+  display: block;
+  width: 50%;
+}
+
+.products__color--green::before {
+  background-color: greenyellow;
+}
+
+.products__color--purple::before {
+  background-color: purple;
+}
+
+.products__color--yellow::before {
+  background-color: yellow;
+}
+
+.products__color--orange::before {
+  background-color: orange;
+}
+
+.products__color--blue::before {
+  background-color: blue;
+}
+
+.products__color--pink::before {
+  background-color: #f15f74;
+}
+
+.products__list {
+  width: 74%;
+  padding-left: 1.5rem;
+}
+
+.products__list--nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.products__list--icon {
+  font-size: 1.8rem;
+  color: #afafaf;
+  margin-top: 0.8rem;
+}
+
+.products__list--icon .fas:hover {
+  cursor: pointer;
+}
+
+.products__list--icon label + label {
+  margin-left: 1rem;
+}
+
+.products__list--icon .display__type {
+  display: none;
+}
+
+.products__list--select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.4rem;
+  color: #363636;
+}
+
+.products__list--select p {
+  margin-top: 0.6rem;
+  padding: 0 1.4rem;
+}
+
+.products__list--select select {
+  color: #898989;
+  padding: 0.8rem;
+  border: 1px solid #afafaf;
+}
+
+.products__panner {
+  display: block;
+  height: 16rem;
+  overflow: hidden;
+}
+
+.products__panner img {
+  display: block;
+  margin-top: -13rem;
+  width: 100%;
+}
+
+.products__display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 5rem;
+  margin-right: -3.3rem;
+}
+
+.products__display .product__card {
+  display: block;
+  width: calc(88.84%/3);
+}
+
+.products__display .btn--heart {
+  display: none;
+}
+
+.products__display .product__info {
+  display: none;
+}
+
+.products__display .product__info .product__price {
+  font-size: 1.8rem;
+}
+
+.products__pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 15rem;
+}
+
+.products__btn-page {
+  display: block;
+  font-size: 1.4rem;
+  color: #afafaf;
+  padding: 0.9rem 1.6rem;
+  border: 1px solid;
+  margin-left: 2rem;
+}
+
+.products__btn-page:hover {
+  background-color: #3fb771;
+  color: #ffffff;
+}
+
+.products__btn-current {
+  background-color: #3fb771;
+  color: #ffffff;
+}
+
+#display__grid:checked ~ .grid {
+  color: #3fb771;
+}
+
+.list {
+  color: #3fb771;
+}
+
+#display__grid:checked ~ .list {
+  color: #afafaf;
+}
+
+#display__list {
+  display: none;
+}
+
+#display__list:checked ~ .products__display {
+  display: block;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
+  margin-right: 0;
+  padding-right: 0;
+  height: calc(25.5rem * 6);
+  overflow: hidden;
+}
+
+#display__list:checked ~ .products__display .product__card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #d9dde0;
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
+}
+
+#display__list:checked ~ .products__display .product__card img {
+  width: 22rem;
+}
+
+#display__list:checked ~ .products__display .product__card .product__content {
+  border: none;
+  margin-left: 3rem;
+  text-align: left;
+}
+
+#display__list:checked ~ .products__display .product__card .product__name {
+  font-size: 1.8rem;
+  color: #363636;
+}
+
+#display__list:checked ~ .products__display .product__card .product__info {
+  display: block;
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #898989;
+}
+
+#display__list:checked ~ .products__display .product__card .btn {
+  padding: 1.2rem 3rem;
+  border-radius: 3rem;
+  font-size: 1.4rem;
+}
+
+#display__list:checked ~ .products__display .product__card .btn--show {
+  margin-left: 2rem;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 50%;
+}
+
+#display__list:checked ~ .products__display .product__card .btn--heart {
+  display: inline;
+}
+
+#display__list:checked ~ .products__display .product__card .btn--heart:hover {
+  color: #f15f74;
+  -webkit-transform: scale(1.5, 1.5);
+          transform: scale(1.5, 1.5);
+}
+
+#display__list:checked ~ .products__display .product__card--large {
+  max-width: 100% !important;
+}
+
+#display__list:checked ~ .products__display .product__card .product__price {
+  margin-bottom: 6rem;
+  font-size: 1.8rem;
+}
+
+#display__list:checked ~ .products__display .product__card .product__price--old {
+  display: none;
+}
+
+#display__list:checked ~ .products__display .product__card .product__btn {
+  display: block;
+  width: 100%;
+  margin-top: 17rem;
+  margin-left: -3.5rem;
+}
+
+#display__list:checked ~ .products__display .product__card .product__interactive:hover {
+  background-color: transparent;
+}
+/*# sourceMappingURL=style_products.css.map */

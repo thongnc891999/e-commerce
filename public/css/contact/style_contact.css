@@ -1,0 +1,136 @@
+iframe {
+  width: 100%;
+  padding-top: 3rem;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2rem;
+}
+
+.contact__title {
+  display: block;
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #68ba8f;
+  padding-bottom: 3rem;
+  margin-top: 5rem;
+}
+
+.contact__left {
+  width: 50%;
+}
+
+.contact__right {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact__right img {
+  width: 50%;
+  padding-bottom: 2rem;
+}
+
+.contact__right p,
+.contact__right a {
+  font-size: 1.4rem;
+  padding-bottom: 1.6rem;
+}
+
+.contact__right a {
+  font-style: italic;
+}
+
+.contact__right a:hover {
+  color: #68ba8f;
+}
+
+.contact__right .fas {
+  margin-right: 0.5rem;
+}
+
+.contact__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact__form--group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.contact__form--group input {
+  width: 90%;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  margin: 1rem 0;
+}
+
+.contact__form--group label {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.contact__form--group label span {
+  color: red;
+}
+
+.contact__form--btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.contact .btn {
+  display: block;
+  background-color: #68ba8f;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1.3rem 3rem;
+}
+
+.contact .btn:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1023px) {
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact__left {
+    width: 100%;
+  }
+  .contact__right {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style_contact.css.map */

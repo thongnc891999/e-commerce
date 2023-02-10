@@ -1,0 +1,138 @@
+.cart__title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #3fb771;
+  margin: 3rem 2rem;
+}
+
+.cart__table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #898989;
+}
+
+.cart__table thead {
+  background-color: #3fb771;
+  color: #ffffff;
+  font-size: 1.4rem;
+}
+
+.cart__table thead th {
+  padding: 2rem 5rem;
+}
+
+.cart__table tbody tr th:nth-child(2) a {
+  font-weight: 300 !important;
+  color: #3fb771 !important;
+}
+
+.cart__table tbody tr th:nth-child(2) a:hover {
+  opacity: 0.7;
+}
+
+.cart table, .cart tr, .cart th {
+  border: 1px solid #ebebeb;
+  padding: 1.4rem;
+}
+
+.cart input {
+  max-width: 5rem;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  border: 1px solid #e1e1e1;
+  text-align: center;
+}
+
+.cart th {
+  vertical-align: middle;
+}
+
+.cart img {
+  max-width: 15.5rem;
+  margin: 0 auto;
+}
+
+.cart__btn {
+  display: block;
+  padding-top: 4.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: end;
+}
+
+.cart__btn .btn {
+  padding: 1.4rem 3rem;
+}
+
+.cart__btn .btn + .btn {
+  margin-left: 2rem;
+}
+
+.cart__btn--delete {
+  color: #3fb771;
+  background-color: #ffffff;
+  border: 1px solid;
+}
+
+.cart__btn--delete:hover {
+  opacity: 0.6;
+}
+
+.cart__btn--continue {
+  color: #ffffff;
+  background-color: #3fb771;
+}
+
+.cart__btn--continue:hover {
+  opacity: 0.7;
+}
+
+.cart__pay {
+  margin-top: 7rem;
+  padding-bottom: 20rem;
+  margin-bottom: 10rem;
+  width: 100%;
+  position: relative;
+}
+
+.cart__pay table {
+  font-size: 1.4rem;
+  width: 50%;
+  color: #3fb771;
+  font-weight: 500;
+}
+
+.cart__pay table, .cart__pay--btn {
+  position: absolute;
+  right: 0;
+}
+
+.cart__pay--btn {
+  display: block;
+  top: 100%;
+}
+
+.cart__pay tfoot {
+  background-color: #3fb771;
+  color: #ffffff;
+}
+
+.cart__btn--pay {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 1.4rem 3rem;
+  color: #ffffff;
+  background-color: #3fb771;
+}
+
+.cart__btn--pay:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1023) {
+  .cart {
+    font-size: 1.3rem;
+  }
+}
+/*# sourceMappingURL=style_cart.css.map */
