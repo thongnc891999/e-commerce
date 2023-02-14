@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     use HasFactory;
-    //use SoftDeletes;
+    use SoftDeletes;
 
-    const STATUS_PRODUCT_HOT = 0;
-    const STATUS_PRODUCT_DISCOUNT = 1;
-    const STATUS_PRODUCT_NEW = 2;
+    
+    const STATUS_PRODUCT_DISCOUNT = 0; //0: Hằng số sản phẩm giảm giá 
+    const STATUS_PRODUCT_HOT = 1; //1: Hằng số sản phẩm nổi bật
+    const STATUS_PRODUCT_NEW = 2; //0: Hằng số sản phẩm mới 
 
 
     protected $table = 'products';

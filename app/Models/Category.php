@@ -20,6 +20,7 @@ class Category extends Model
     /**
      * Get the posts for the category.
      */
+    // 1 thể loại thì sẽ có nhiều sản phẩm cùng loại
     public function products()
     {
         return $this->hasMany(Product::class);
@@ -28,10 +29,10 @@ class Category extends Model
     /**
      * Get the posts for the category.
      */
-    public function limitProducts()
-    {
-        return $this->hasMany(Product::class)
-            ->take(8);
-    }
+    // public function limitProducts()
+    // {
+    //     return $this->hasMany(Product::class)
+    //         ->take(8);
+    // }
     
 }

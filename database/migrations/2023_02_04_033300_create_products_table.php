@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('price');
             $table->tinyText('status');
             $table->integer('quantity');
-            $table->string('type')->default('0')->comment('hot: (0: (hot) hiển thị thông tin sản nổi bật; 1: (discount) hiển thị thông tin sản phẩm giảm giá; 2: (new) hiển thị sản phẩm mới)');
+            $table->string('type')->default('0')->comment('0: (discount) hiển thị thông tin sản phẩm giảm giá; 1: (hot) hiển thị thông tin sản nổi bật; ; 2: (new) hiển thị sản phẩm mới)');
             $table->integer('discount')->nullable();
             $table->timestamps();
             $table->softDeletes();

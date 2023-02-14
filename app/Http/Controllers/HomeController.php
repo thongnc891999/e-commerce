@@ -21,8 +21,6 @@ class HomeController extends Controller
         // $products = $productCtl->getAllProducts();
         $hotProducts = $productCtl->getHotProducts();
         $discountProducts = $productCtl->getDiscountProducts();
-        
-        // dd($discountProducts->count());
         $newProducts = $productCtl->getNewProducts();
         //  dd($hotProducts);
         // $products = $hotProducts;

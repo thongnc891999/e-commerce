@@ -70,19 +70,19 @@
                     <a href="{{ route('home')}}">Trang chủ</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#">Giới thiệu</a>
+                    <a href="{{ route('introduc') }}">Giới thiệu</a>
                 </li>
                 <li class="menu__item">
                     <a href="{{ route('products')}}">Sản phẩm </a>
                 </li>
                 <li class="menu__item">
-                    <a href="#">Sản phẩm mới</a>
+                    <a href="{{ route('new_products')}}">Sản phẩm mới</a>
                 </li>
                 <li class="menu__item">
-                    <a href="./news.html">Tin tức</a>
+                    <a href="{{ route('news')}}">Tin tức</a>
                 </li>
                 <li class="menu__item">
-                    <a href="./contact.html">Liên hệ</a>
+                    <a href="{{ route('contact')}}">Liên hệ</a>
                 </li>
             </ul>
         </div>

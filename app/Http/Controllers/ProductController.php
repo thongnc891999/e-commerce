@@ -50,14 +50,14 @@ class ProductController extends Controller
 
     public function getHotProducts()
     {
-        return $this->getDataProducts()->productHot()->limit(10)->get(); 
+        return $this->getDataProducts()->productHot()->limit(8)->get(); 
     }
 
 
 
     public function getDiscountProducts()
     {
-        return $this->getDataProducts()->productDiscount()->limit(5)->get(); 
+        return $this->getDataProducts()->productDiscount()->limit(6)->get(); 
     }
 
 
