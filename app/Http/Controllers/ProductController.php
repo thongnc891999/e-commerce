@@ -41,11 +41,20 @@ class ProductController extends Controller
 
    public function getCategoryProducts($id)
    {
-       $category_product = Product::where('category_id',$id)->get();
+       $category_product = Product::where('id',$id)->get();
        dd($category_product);
        return view('client.category.product')->with([
         'list_product'     =>  $category_product,
        ]);
+   }
+
+   public function getProductDetail($id){
+  
+    $product = Product::whereId($id)->with('product_images')->with('product_detail')->first();
+    // $data['product'] = $product;
+    return view('client.product_detail')->with([
+        'product' =>$product,
+    ]);
    }
 
     public function getHotProducts()
@@ -57,7 +66,7 @@ class ProductController extends Controller
 
     public function getDiscountProducts()
     {
-        return $this->getDataProducts()->productDiscount()->limit(6)->get(); 
+        return $this->getDataProducts()->productDiscount()->limit(7)->get(); 
     }
 
 

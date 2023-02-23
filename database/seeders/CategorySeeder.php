@@ -19,12 +19,12 @@ class categorySeeder extends Seeder
         $date = date('Y-m-d H:i:s');
         $data = [
 
-            ['name' => 'Hoa khai trương', 'parent_id' => '2' , 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Hoa chia buồn', 'parent_id' => '2' , 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Hoa sinh nhật', 'parent_id' => '2' , 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Hoa bó', 'parent_id' => '2' , 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Hoa giỏ', 'parent_id' => '1' , 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'Hoa trưng bày', 'parent_id' => '1' , 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoa khai trương', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoa chia buồn', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoa sinh nhật', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoa bó', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoa giỏ', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Hoa trưng bày', 'created_at' => $date, 'updated_at' => $date],
             
         ];
 

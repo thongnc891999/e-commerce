@@ -21,12 +21,12 @@ return new class extends Migration
             $table->integer('price');
             $table->tinyText('status');
             $table->integer('quantity');
-            $table->string('type')->default('0')->comment('0: (discount) hiển thị thông tin sản phẩm giảm giá; 1: (hot) hiển thị thông tin sản nổi bật; ; 2: (new) hiển thị sản phẩm mới)');
+            $table->tinyText('type')->default('0')->comment('0: (discount) hiển thị thông tin sản phẩm giảm giá; 1: (hot) hiển thị thông tin sản nổi bật; ; 2: (new) hiển thị sản phẩm mới)');
             $table->integer('discount')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

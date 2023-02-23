@@ -111,13 +111,11 @@
                         <div class="product__card product__card--large">
                             <img src="./img/spx2/spx2-3.png" alt="">
                             <div class="product__interactive">
-
                                 <div class="product__btn">
-                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                    <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
+                                    <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
+                                    <a href="#" class="btn btn--buy">Mua Ngay</a>
+                                    {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
                                 </div>
-
                             </div>
                             <div class="product__content">
                                 <h4 class="product__name">Cây xương rồng </h4>
@@ -134,9 +132,9 @@
                             <div class="product__interactive">
 
                                 <div class="product__btn">
-                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                    <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
+                                    <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
+                                    <a href="#" class="btn btn--buy">Mua Ngay</a>
+                                    {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
                                 </div>
 
                             </div>
@@ -154,9 +152,9 @@
                             <div class="product__interactive">
 
                                 <div class="product__btn">
-                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                    <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
+                                    <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
+                                    <a href="#" class="btn btn--buy">Mua Ngay</a>
+                                    {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
                                 </div>
 
                             </div>

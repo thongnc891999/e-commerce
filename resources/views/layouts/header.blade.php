@@ -26,7 +26,7 @@
         <div class="container header--inner">
             <div class="header__body--left">
                 <a href="./home.html"> <img src="./img/logo.png" alt="" class="logo"></a>
-                {{-- <a href="./home.html"> <img src="./img/beside_logo.jpg" alt=""></a> --}}
+                <a href="./home.html"> <img src="./img/beside_logo.png" alt=""></a>
             </div>
             <div class="header__body--right">
                 <div class="header__body--mid">
@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="header__body--cart">
-                    <a href="./cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i></a>
                     <p>0 Sản phẩm</p>
                 </div>
 
@@ -87,22 +87,7 @@
             </ul>
         </div>
     </div>
-    <div class="header__slide">
-        <ul class="circle__list point">
-            <li class="circle__item "><input type="radio" onclick="currentSlide(0)" name="slide" checked></li>
-            <li class="circle__item "><input type="radio" onclick="currentSlide(1)" name="slide"></li>
-            <li class="circle__item "><input type="radio" onclick="currentSlide(2)" name="slide"></li>
-        </ul>
-        <div class="header__slide--list">
-            <img src="./img/slide-1920x590.png" alt="" class="header__slide--item first">
-            <img src="./img/slider_2.jpg" alt="" class="header__slide--item">
-            <img src="./img/slide-3.jpg" alt="" class="header__slide--item">
-
-        </div>
-
-        <a class=" btn-next-left" onclick="plusSlideLeft()"><i class="fas fa-chevron-left point"></i></a>
-        <a class=" btn-next-right" onclick="plusSlideRight()"><i class="fas fa-chevron-right point"></i></a>
-
-    </div>
+    
 
 </div>
+

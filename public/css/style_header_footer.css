@@ -120,6 +120,7 @@ body {
 
 .header__body {
   background: url(../img/bg-header.png);
+  /* height: 12rem; */
 }
 
 .header__body--left {
@@ -183,7 +184,8 @@ body {
 }
 
 .header__menu {
-  background-color: #2b302d;
+  background-color: #3fb771;
+  /* margin-bottom: 1.5rem; */
 }
 
 .header .menu__list {

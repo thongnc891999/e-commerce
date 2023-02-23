@@ -16,23 +16,9 @@
         <title>@yield('title', 'Home page')</title>
         {{-- css --}}
         @include('layouts.css')
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style_header_footer.css">
-    <link rel="stylesheet" href="./css/home/style_home.css">
-    <link rel="stylesheet" href="./css/introduc/style_introduc.css">
-    <link rel="stylesheet" href="./css/style-slide.css">
-    <link rel="stylesheet" href="./css/products/style_products.css">
-    <link rel="stylesheet" href="./css/contact/style_contact.css">
-    <link rel="stylesheet" href="./css/cart/style_cart.css">
-    <link rel="stylesheet" href="./css/product/style_product.css">
-    <link rel="stylesheet" href="./css/newses/style_news.css">
-    <link rel="stylesheet" href="./css/news/style_news.css">
+    
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/header_footer/menu_library.js"></script>
-    <script src="./js/product/library_swap_img.js"></script>
-    <script src="./js/product/library_slide.js"></script>
-    <script src="./js/product/library_product.js"></script>
+  
     
 </head>
 
@@ -58,7 +44,7 @@
     @include('layouts.js')
      
     </div>
-    <script src="./js/slideShow.js"></script>
+    
 </body>
 
 </html>

@@ -6,70 +6,7 @@
                     <h4>Home / <a href=""> Danh sách sản phẩm</a></h4>
                 </div>
                 <div class="products">
-                    <div class="products__menu-vertical">
-                        <div class="products__title">
-                            <p> Danh mục sản phẩm</p>
-                        </div>
-                        <ul class="products__menu--list">
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây chậu treo ( 10 ) </a>
-                                <ul class="products__menu--list">
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây chậu treo ( 10 ) </a>
-                                    </li>
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây có hoa ( 5 )</a>
-                                    </li>
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây dây leo</a>
-                                    </li>
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây để bàn</a>
-                                    </li>
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây may mắn </a>
-                                    </li>
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây trang trí </a>
-                                    </li>
-                                    <li class="products__menu--item">
-                                        <i class="fas fa-chevron-right"></i>
-                                        <a href="#" class="products__menu--link">Cây may mắn </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây có hoa ( 5 )</a>
-                            </li>
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây dây leo</a>
-                            </li>
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây để bàn</a>
-                            </li>
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây may mắn </a>
-                            </li>
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây trang trí </a>
-                            </li>
-                            <li class="products__menu--item">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="#" class="products__menu--link">Cây may mắn </a>
-                            </li>
-                        </ul>
+                    <div class="products__menu-vertical">                   
                         <div class="products__title">
                             <p>Tin tức nổi bật</p>
                         </div>

@@ -1,5 +1,16 @@
 @extends('layouts.master')
 @section('content')
+ {{-- show message --}}
+@if(Session::has('success'))
+    <p class="text-success">{{ Session::get('success') }}</p>
+@endif
+
+{{-- show error message --}}
+@if(Session::has('error'))
+    <p class="text-danger">{{ Session::get('error') }}</p>
+@endif
+
+{{-- display cart info --}}
     <div class="body">
         <div class="container">
             <div class="link-page">
@@ -14,68 +25,56 @@
                         <th>ĐƠN GIÁ</th>
                         <th>SỐ LƯỢNG</th>
                         <th>THÀNH TIỀN</th>
-                        <th>XÓA</th>
+                        {{-- <th>XÓA</th> --}}
                     </thead>
                     <tbody>
+                        @php
+                            $count = 1;
+                            $totalMoney = 0;
+                            $totalQuantity = 0;
+                        @endphp
+                        @foreach ($carts as $value)
+                            @php
+                                $productInfo = $value['product_info'];
+                                $productName = $productInfo->name;
+                                $productThumbnail = $productInfo->thumbnail;
+                                $productPrice = $productInfo->price;
+                                $money = $productPrice * $value['quantity'];
+
+                                // update $totalMoney, $totalQuantity
+                                $totalQuantity = $totalQuantity + $value['quantity'];
+                                $totalMoney = $totalMoney + $money;
+                            @endphp
                         <tr>
                             <th>
                                 <img src="./img/spx2/spx2-1.png" alt="">
                             </th>
                             <th>
-                                <a href="#">CÂY VĂN PHÒNG</a>
-
+                                <span>{{$productName}}</span>
                             </th>
                             <th>
-                                270.000đ
+                                <span>{{number_format($productPrice) }} VNĐ</span>
                             </th>
                             <th>
-                                <input type="text" value="1">
+                                <div class="order-option">
+                                    <span id="quantity-field">
+                                        <form action="{{ route('update_quantity', ['product_id' => $productInfo->id]) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <button id="down" class="quantity_table">-</button>
+                                            <input type="text" id="quantity" value="{{$totalQuantity}}" disabled>
+                                            <button id="up" class="quantity_table">+</button>
+                                        </form>
+                                    </span>
+                                </div>
                             </th>
                             <th>
-                                270.000đ
+                                {{ number_format($money) }} VNĐ
                             </th>
-                            <th> <a href=""><i class="fas fa-trash-alt"></i></a></th>
-
-                        </tr>
-                        <tr>
-                            <th>
-                                <img src="./img/spx2/spx2-1.png" alt="">
-                            </th>
-                            <th>
-                                <a href="#">CÂY VĂN PHÒNG</a>
-                            </th>
-                            <th>
-                                270.000đ
-                            </th>
-                            <th>
-                                <input type="text" value="1">
-                            </th>
-                            <th>
-                                270.000đ
-                            </th>
-                            <th> <a href=""><i class="fas fa-trash-alt"></i></a></th>
+                            {{-- <th> <a href=""><i class="fas fa-trash-alt"></i></a></th> --}}
 
                         </tr>
-                        <tr>
-                            <th>
-                                <img src="./img/spx2/spx2-1.png" alt="">
-                            </th>
-                            <th>
-                                <a href="#">CÂY VĂN PHÒNG</a>
-                            </th>
-                            <th>
-                                270.000đ
-                            </th>
-                            <th>
-                                <input type="text" value="1">
-                            </th>
-                            <th>
-                                270.000đ
-                            </th>
-                            <th> <a href=""><i class="fas fa-trash-alt"></i></a></th>
-
-                        </tr>
-
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="cart__btn">
@@ -86,7 +85,7 @@
                     <table>
                         <tr>
                             <th>
-                                TỔNG TIỀN ( CHƯA THUẾ )
+                                TỔNG TIỀN
                             </th>
                             <th>
                                 270.000đ

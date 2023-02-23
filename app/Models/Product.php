@@ -39,13 +39,14 @@ class Product extends Model
     public function product_images(){
         return $this->hasMany(ProductImage::class);
     }
+
+    public function product_detail(){
+        return $this->hasOne(ProductDetail::class);
+    }
+    
     /**
      * Get the post_detail for the post.
      */
-    public function product_detail()
-    {
-        return $this->hasOne(ProductDetail::class);
-    }
     public function price()
     {
         return $this->hasOne(Price::class);

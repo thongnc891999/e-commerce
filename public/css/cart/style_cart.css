@@ -28,6 +28,16 @@
   color: #3fb771 !important;
 }
 
+.order-option{
+  width: 100%;
+}
+
+.quantity_table{
+  max-width: 5rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  border: 1px solid #e1e1e1;
+  text-align: center;
+}
 .cart__table tbody tr th:nth-child(2) a:hover {
   opacity: 0.7;
 }
@@ -89,7 +99,7 @@
 }
 
 .cart__pay {
-  margin-top: 7rem;
+  margin-top: 6rem;
   padding-bottom: 20rem;
   margin-bottom: 10rem;
   width: 100%;

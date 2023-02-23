@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_details', function (Blueprint $table) {
+        Schema::create('comment_reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
+            $table->tinyInteger('rating')->default('0')->comment('0 = (1 sao), 1 = (2 sao), 2 = (3 sao), 3 = (4 sao), 4 = (5 sao)');
+            $table->string('title');
+            $table->string('content');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_details');
+        Schema::dropIfExists('comment_reviews');
     }
 };

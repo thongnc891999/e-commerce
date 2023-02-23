@@ -31,51 +31,20 @@ Route::get('/new_products', [NewProductController::class, 'index'])->name('new_p
 Route::get('/news', [FloatingNewController::class, 'index'])->name('news'); 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact'); 
 
+
 Route::group(['prefix' => 'products'], function () {
     Route::get('/', [ProductController::class, 'index'])->name('products');
     // Route::get('/category{id}', [ProductController::class, 'getCategoryProducts'])->name('products');
     Route::get('/category/{id}', [ProductController::class, 'getCategoryProducts'])->name('category.product');
+    Route::get('/detail/{id}',[ProductController::class, 'getProductDetail'])->name('detail.product'); 
 
 });
 
-// Route::group(['prefix' => 'cart', 'as' => 'cart.'], function () {
-//     Route::get('/', [CartController::class, 'index'])->name('index');
-//     Route::post('/{product_id}/add', [CartController::class, 'addCart'])->name('add-cart');
-//     Route::put('/{product_id}/update-quantity', [CartController::class, 'updateQuantity'])->name('update-quantity');
-//     Route::delete('/{product_id}/remove-product', [CartController::class, 'removeProduct'])->name('remove-product');
+Route::group(['prefix' => 'cart'], function () {
+    Route::get('/', [CartController::class, 'showCart'])->name('cart');
+    Route::post('/add/{id}', [CartController::class, 'addCart'])->name('add_cart');
+    Route::put('/{product_id}/update_quantity', [CartController::class, 'updateQuantity'])->name('update_quantity');
+    // Route::delete('/{product_id}/remove-product', [CartController::class, 'removeProduct'])->name('remove-product');
 
-//     // Tạo route để nhập thông tin địa chỉ Người mua hàng + submit Form địa chỉ người mua hàng
-//     Route::get('/shipping-information', [CartController::class, 'shippingInformation'])
-//         ->name('checkout.shipping-information');
-
-//     // Route for checkout-order
-//     Route::post('/checkout-order', [CartController::class, 'checkoutOrder'])
-//         ->name('checkout.order');
-
-//     // Route for thank-you
-//     Route::get('/thank-you', [CartController::class, 'thankYou'])
-//         ->name('checkout.thank-you');
-
-
-//     // Route for Checkout
-//     Route::group(['prefix' => 'checkout', 'as' => 'checkout.', 'middleware' => 'check_empty_cart'], function () {
-//         // Route for shipping-information
-//         Route::get('/shipping-information', [CartController::class, 'shippingInformation'])->name('shipping-information');
-//         Route::post('/handle-shipping-information', [CartController::class, 'handleShippingInformation'])->name('handle-shipping-information');
-
-//         // Route for payment-method
-//         Route::get('/payment-method', [CartController::class, 'paymentMethod'])->name('payment-method');
-
-//         // Route for checkout-order
-//         Route::post('/checkout-order', [CartController::class, 'checkoutOrder'])->name('checkout-order');
-
-//         // Route for thank-you
-//         Route::get('/thank-you', [CartController::class, 'thankYou'])->name('thank-you');
-//     });
-
-//     // ajax process check and update quantity
-//     Route::put('/{id}/ajax-update-quantity', [CartController::class, 'ajaxUpdateQuantity'])->name('ajax-update-quantity');
-
-//     // ajax process check and remove product in session Cart
-//     Route::delete('/{id}/ajax-remove-product-in-cart', [CartController::class, 'ajaxRemoveProductInCart'])->name('ajax-remove-product-in-cart');
-// });
+  
+});

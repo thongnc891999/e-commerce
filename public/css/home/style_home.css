@@ -6,7 +6,9 @@
 .btn--buy {
   background-color: #3fb771;
   color: #ffffff;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 2rem;
+  border: none;
+  margin-right: 3px;
 }
 
 .btn--show {
@@ -109,11 +111,19 @@
 
 .product__interactive:hover > .product__btn {
   display: block;
+  width: 100%;
+  display: flex;
+  margin-top: 107px;
+  font-size: 10px;
+  justify-content: center;
+  
 }
 
 .product__btn {
+  
   margin-top: 12.5rem;
   display: none;
+ 
 }
 
 .product__status {
