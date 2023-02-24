@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->date('star_date');
             $table->date('end_date');
-            $table->string('type');
-            $table->string('discount_value');
+            $table->tinyInteger('type')->default('0')->comment('0: (percent) giảm giá theo %, 1: (percent) giảm giá  theo voucher');
+            $table->integer('discount');
             $table->text('description');
             $table->timestamps();
         });

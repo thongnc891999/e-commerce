@@ -197,7 +197,7 @@
                                     <h4 class="product__name">{{ $newproduct->name }}</h4>
                                     <h4 class="product__price">
                                         {{ number_format($newproduct->price). ' VND'}}
-                                        <span class="product__price--old">450.000₫</span>
+                                        {{-- <span class="product__price--old"></span> --}}
                                     </h4>
                                 </div>
 

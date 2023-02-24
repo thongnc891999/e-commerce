@@ -30,8 +30,8 @@ class ProductController extends Controller
    {
         $categoriesctl = new CategoryController;
         $categories = $categoriesctl->getAllCategories();
-        $products = ProductController::getAllProducts();
-        // dd($categories);
+        $products = Product::paginate(9);
+        // dd($products);
         return view('client.product_page')->with(
         [
             'categories'  => $categories,
@@ -39,19 +39,22 @@ class ProductController extends Controller
         ]);
    }
 
-   public function getCategoryProducts($id)
+   public function getCategoryProducts($categoryId)
    {
-       $category_product = Product::where('id',$id)->get();
-       dd($category_product);
-       return view('client.category.product')->with([
-        'list_product'     =>  $category_product,
-       ]);
+        $categoriesctl = new CategoryController;
+        $categories = $categoriesctl->getAllCategories();
+        $category_products = Product::where('category_id',$categoryId)->get();
+        //    dd($category_products);
+            return view('client.category_product')->with([
+            'categories'            => $categories,
+            'category_products'     => $category_products,
+            ]);
    }
 
    public function getProductDetail($id){
   
-    $product = Product::whereId($id)->with('product_images')->with('product_detail')->first();
-    // $data['product'] = $product;
+    $product = Product::whereId($id)->with('product_images')->first();
+    // $data['product'] = $product; 
     return view('client.product_detail')->with([
         'product' =>$product,
     ]);

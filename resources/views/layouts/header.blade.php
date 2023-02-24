@@ -75,9 +75,9 @@
                 <li class="menu__item">
                     <a href="{{ route('products')}}">Sản phẩm </a>
                 </li>
-                <li class="menu__item">
+                {{-- <li class="menu__item">
                     <a href="{{ route('new_products')}}">Sản phẩm mới</a>
-                </li>
+                </li> --}}
                 <li class="menu__item">
                     <a href="{{ route('news')}}">Tin tức</a>
                 </li>

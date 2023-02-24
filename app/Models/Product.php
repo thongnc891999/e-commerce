@@ -22,7 +22,7 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
-        'image', // dat la so it ay : image hoac thumbnail ---> sua lai file migrate, reset lai DB
+        'thumbnail', // dat la so it ay : image hoac thumbnail ---> sua lai file migrate, reset lai DB
         'price',
         'status',
         'quantity',
@@ -40,9 +40,9 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
-    public function product_detail(){
-        return $this->hasOne(ProductDetail::class);
-    }
+    // public function product_detail(){
+    //     return $this->hasOne(ProductDetail::class);
+    // }
     
     /**
      * Get the post_detail for the post.

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->tinyInteger('rating')->default('0')->comment('0 = (1 sao), 1 = (2 sao), 2 = (3 sao), 3 = (4 sao), 4 = (5 sao)');
-            $table->string('title');
             $table->string('content');
             $table->timestamps();
         });

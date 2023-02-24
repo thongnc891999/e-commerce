@@ -17,9 +17,9 @@ class RoleSeeder extends Seeder
         $date = date('Y-m-d H:i:s');
         $data = [
             ['name' => 'admin', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'editor', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'shipper', 'created_at' => $date, 'updated_at' => $date],
             ['name' => 'user', 'created_at' => $date, 'updated_at' => $date],
+            // ['name' => 'editor', 'created_at' => $date, 'updated_at' => $date],
+            // ['name' => 'shipper', 'created_at' => $date, 'updated_at' => $date],
 
         ];
 

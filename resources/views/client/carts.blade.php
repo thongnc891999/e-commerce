@@ -11,6 +11,20 @@
 @endif
 
 {{-- display cart info --}}
+@if(empty($carts))
+<div class="body">
+    <div class="container">
+        <div class="link-page">
+            <h4>Home / <a href=""> Giỏ hàng</a></h4>
+        </div>
+        <div class="cart_null">
+            <h3 class="cart__title">Không có sản phẩm nào trong giỏ hàng.</h3>
+            <a href="{{ route('home')}}" class="btn btn-outline-success">Tiếp Tục Mua Hàng</a>
+        </div>
+    </div>
+</div>
+    {{-- @dd($carts) --}}
+@else
     <div class="body">
         <div class="container">
             <div class="link-page">
@@ -61,9 +75,9 @@
                                         <form action="{{ route('update_quantity', ['product_id' => $productInfo->id]) }}" method="POST">
                                             @csrf
                                             @method('PUT')
-                                            <button id="down" class="quantity_table">-</button>
+                                            <button type="submit" id="down" class="quantity_table">-</button>
                                             <input type="text" id="quantity" value="{{$totalQuantity}}" disabled>
-                                            <button id="up" class="quantity_table">+</button>
+                                            <button id="submit" class="quantity_table">+</button>
                                         </form>
                                     </span>
                                 </div>
@@ -112,4 +126,5 @@
             </div>
         </div>
     </div>
+@endif
 @endsection

@@ -113,7 +113,7 @@
   display: block;
   width: 100%;
   display: flex;
-  margin-top: 107px;
+  margin-top: 115px;
   font-size: 10px;
   justify-content: center;
   
@@ -221,6 +221,10 @@
   width: 103%;
 }
 
+/* .discount{
+  margin-top: 115px;
+} */
+    
 .product__group {
   border-bottom: 1px solid #d9dde0;
   display: -webkit-box;

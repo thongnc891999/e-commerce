@@ -27,7 +27,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/introduc', function(){
     return view('client.introduc');
 })->name('introduc');
-Route::get('/new_products', [NewProductController::class, 'index'])->name('new_products');
+// Route::get('/new_products', [NewProductController::class, 'index'])->name('new_products');
 Route::get('/news', [FloatingNewController::class, 'index'])->name('news'); 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact'); 
 

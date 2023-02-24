@@ -83,18 +83,19 @@
                                     <option value="time">Thời gian</option>
                                     <option value="price">Giá tiền</option>
                                 </select>
-                                <p>Show</p>
+                                {{-- <p>Show</p>
                                 <select name="nav__number_show" id="nav__number_show">
                                     <option value="6">6</option>
                                     <option value="9">9</option>
                                     <option value="12">12</option>
                                     <option value="15">15</option>
-                                </select>
+                                </select> --}}
                             </div>
 
                         </nav>
-                        <input type="radio" name="display" class="display__type" id="display__list">
+                        {{-- <input type="radio" name="display" class="display__type" id="display__list"> --}}
                         <div class="products__display" id="list">
+                            @foreach($products as $product)
                             <div class="product__card product__card--large">
                                 <img src="./img/spx2/spx2-3.png" alt="">
                                 <div class="product__interactive">
@@ -107,11 +108,32 @@
 
                                 </div>
                                 <div class="product__content">
-                                    <h4 class="product__name">Cây xương rồng </h4>
+                                    <h4 class="product__name">{{ $product->name}}</h4>
                                     <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
                                         bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
                                         xanh đốm trắng.</p>
 
+                                    <h4 class="product__price">{{ number_format($product->price). ' VND'}}<span
+                                            class="product__price--old"></span> </h4>
+                                </div>
+                            </div>
+                            @endforeach
+                            {{-- <div class="product__card product__card--large">
+                                <img src="./img/spx2/spx2-3.png" alt="">
+                                <div class="product__interactive">
+
+                                    <div class="product__btn">
+                                        <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
+                                        <a href="#" class="btn btn--buy">Mua Ngay</a>
+                                        <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
+                                    </div>
+
+                                </div>
+                                <div class="product__content">
+                                    <h4 class="product__name">Cây xương rồng </h4>
+                                    <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
+                                        bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
+                                        xanh đốm trắng.</p>
                                     <h4 class="product__price">320.000₫ <span
                                             class="product__price--old">450.000₫</span> </h4>
                                 </div>
@@ -123,27 +145,7 @@
                                     <div class="product__btn">
                                         <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
                                         <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                        {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
-                                    </div>
-
-                                </div>
-                                <div class="product__content">
-                                    <h4 class="product__name">Cây xương rồng </h4>
-                                    <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                        bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                        xanh đốm trắng.</p>
-                                    <h4 class="product__price">320.000₫ <span
-                                            class="product__price--old">450.000₫</span> </h4>
-                                </div>
-                            </div>
-                            <div class="product__card product__card--large">
-                                <img src="./img/spx2/spx2-3.png" alt="">
-                                <div class="product__interactive">
-
-                                    <div class="product__btn">
-                                        <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
-                                        <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                        {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
+                                        <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
                                     </div>
 
                                 </div>
@@ -283,16 +285,12 @@
                                             class="product__price--old">450.000₫</span> </h4>
 
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
+                        
                         <div class="products__pages">
-                            <a href="#" class="products__btn-page">Trang trước</a>
-                            <a href="#" class="products__btn-page products__btn-current">1</a>
-                            <a href="#" class="products__btn-page">2</a>
-                            <a href="#" class="products__btn-page">3</a>
-                            <a href="#" class="products__btn-page">4</a>
-                            <a href="#" class="products__btn-page">Trang cuối</a>
+                            {{ $products->links() }}
                         </div>
                     </div>
                 </div>

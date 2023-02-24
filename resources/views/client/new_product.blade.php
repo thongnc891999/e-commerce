@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
 @section('content')
     <div class="body">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="products__list">
-                    {{-- <div class="products__panner">
+                    <div class="products__panner">
                         <img src="./img/The_Sill_84_Hester.png" alt="">
                     </div>
                     <nav class="products__list--nav">
@@ -92,18 +92,18 @@
                             </select>
                         </div>
 
-                    </nav> --}}
+                    </nav>
                     <div class="product__new">
                         <div class="product__group">
                             <div class="product__title">
                                 <p>Sản phẩm mới</p>
                             </div>
-                            {{-- <div class="product__next">
+                            <div class="product__next">
                                 <a onclick="nextSlideLeft_bottom()" class="product__next--left"><i
                                         class="fas fa-chevron-left"></i></a>
                                 <a onclick="nextSlideRight_bottom()" class="product__next--right"><i
                                         class="fas fa-chevron-right"></i></a>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>   
                     <input type="radio" name="display" class="display__type" id="display__list">
@@ -114,7 +114,7 @@
                                 <div class="product__btn">
                                     <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
                                     <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                    {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
+                                    <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
                                 </div>
                             </div>
                             <div class="product__content">
@@ -134,7 +134,7 @@
                                 <div class="product__btn">
                                     <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
                                     <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                    {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
+                                    <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
                                 </div>
 
                             </div>
@@ -154,7 +154,7 @@
                                 <div class="product__btn">
                                     <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
                                     <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                    {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
+                                    <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
                                 </div>
 
                             </div>
@@ -309,4 +309,4 @@
             </div>
         </div>
     </div>
-@endsection
+@endsection --}}
