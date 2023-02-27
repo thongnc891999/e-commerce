@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-@dd($categories);
 <div class="body">
     <div class="container">
         <div class="link-page">
@@ -98,12 +97,12 @@
                 <div class="products__display" id="list">
                     @foreach($category_products as $category_product)
                     <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
+                        <img src="{{ asset('img/spx2/spx2-3.png') }}" alt="">
                         <div class="product__interactive">
 
                             <div class="product__btn">
-                                <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
-                                <a href="#" class="btn btn--buy">Mua Ngay</a>
+                                <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $category_product->id }}">Thêm Vào Giỏ Hàng</a>
+                                <a href="" class="btn btn--buy">Mua Ngay</a>
                                 {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
                             </div>
 
@@ -119,177 +118,8 @@
                         </div>
                     </div>
                     @endforeach
-                    {{-- <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
-                                <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
-                                <a href="#" class="btn btn--buy">Mua Ngay</a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="./img/spx2/spx2-3.png" alt="">
-                        <div class="product__interactive">
-
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
-                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
-                            </div>
-
-                        </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <p class="product__info">Cây Ngọc ngân là loại cây dành cho tình yêu! Đây là món quà
-                                bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
-                                xanh đốm trắng.</p>
-
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-
-                        </div>
-                    </div> --}}
-
                 </div>
-                
+                <button class="submitBtn" type="button">test</button>
                 <div class="products__pages">
                     {{ $category_products->links() }}
                 </div>
@@ -297,4 +127,8 @@
         </div>
     </div>
 </div>
+<script>
+
+    
+</script>
 @endsection

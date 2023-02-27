@@ -39,7 +39,7 @@
                 </div>
                 <div class="header__body--cart">
                     <a href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i></a>
-                    <p>0 Sản phẩm</p>
+                    <p><span class="cartQty">{{ $cartQty }}</span> Sản phẩm</p>
                 </div>
 
             </div>

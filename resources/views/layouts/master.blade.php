@@ -17,10 +17,7 @@
     <title>@yield('title', 'Home page')</title>
     {{-- css --}}
     @include('layouts.css')
-    
-
-  
-    
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
 <body onresize="setOffSetMarginSlide()">

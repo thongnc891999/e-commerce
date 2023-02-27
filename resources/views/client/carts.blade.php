@@ -75,9 +75,11 @@
                                         <form action="{{ route('update_quantity', ['product_id' => $productInfo->id]) }}" method="POST">
                                             @csrf
                                             @method('PUT')
-                                            <button type="submit" id="down" class="quantity_table">-</button>
-                                            <input type="text" id="quantity" value="{{$totalQuantity}}" disabled>
-                                            <button id="submit" class="quantity_table">+</button>
+                                            <div class="product-detail__right--amount">
+                                                <a class="btn--amount btn-sub calculate" data-id="{{ $value['product_id']; }}">-</a>
+                                                <input class="product--amount{{ $value['product_id']; }}" type="text" value="{{ $value['quantity']; }}" readonly>
+                                                <a class="btn--amount btn-add calculate" data-id="{{ $value['product_id']; }}">+</a>
+                                            </div>
                                         </form>
                                     </span>
                                 </div>

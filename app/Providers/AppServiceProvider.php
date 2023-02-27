@@ -26,5 +26,10 @@ class AppServiceProvider extends ServiceProvider
     {
         // Register Bootstrap
         Paginator::useBootstrap();
+
+        view()->composer('*', function ($view) {
+            $cartQty = session('carts') ? count(session('carts')) : 0;
+            $view->with('cartQty', $cartQty);
+        });
     }
 }

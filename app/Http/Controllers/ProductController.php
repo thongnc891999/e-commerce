@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CategoryController;
 
+
 class ProductController extends Controller
 {
     
@@ -28,8 +29,8 @@ class ProductController extends Controller
     */
    public function index()
    {
-        $categoriesctl = new CategoryController;
-        $categories = $categoriesctl->getAllCategories();
+        $categoriesCtl = new CategoryController;
+        $categories = $categoriesCtl->getAllCategories();
         $products = Product::paginate(9);
         // dd($products);
         return view('client.product_page')->with(
@@ -41,10 +42,11 @@ class ProductController extends Controller
 
    public function getCategoryProducts($categoryId)
    {
-        $categoriesctl = new CategoryController;
-        $categories = $categoriesctl->getAllCategories();
-        $category_products = Product::where('category_id',$categoryId)->get();
-        //    dd($category_products);
+        $categoriesCtl = new CategoryController;
+        $categories = $categoriesCtl->getAllCategories();
+        $category_products = Product::where('category_id',$categoryId)->paginate(9);
+        
+        //    dd(session('carts'));
             return view('client.category_product')->with([
             'categories'            => $categories,
             'category_products'     => $category_products,

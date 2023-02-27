@@ -1,27 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\Product;
-use Exception;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
-    public function showCart()
-    {
-        $data = [];
-        $carts = session('carts');
-        // session()->forget('carts');
-        // session()->save();
-        // dd(session('carts'));
-        $data['carts'] = $carts;
-        return view('client.carts', $data);
-    }
 
-    public function addCart($productId, Request $request)
+    public function addCartApi(Request $request)
     {
+        $productId = $request->product_id;
         // session cart = data or an empty array
         $carts = session()->get('carts') ?? [];
   
@@ -31,9 +23,10 @@ class CartController extends Controller
 
         $quantityUser = 1; // default each time user add product quantity is 1
 
-        if ($quantityDB < $quantityUser) {
-            return back()->with('error', 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.');
-        }
+        // if ($quantityDB < $quantityUser) {
+        //     return back()->with('error', 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.');
+        // }
+        
         
         if (empty($carts)) { // case 1
             $product = [
@@ -43,7 +36,8 @@ class CartController extends Controller
             ];
 
             $carts[$productId] = $product;
-            session(['carts' => $carts]);
+            Session::put(['carts' => $carts]);
+            Session::save();
 
         } else {
             if (empty($carts[$productId])) { 
@@ -52,43 +46,48 @@ class CartController extends Controller
                     'quantity'      => $quantityUser,
                     'product_info'  => $productDB,
                 ];
-                session(['carts' => $carts]);
-
+                Session::put(['carts' => $carts]);
+                Session::save();
 
             } else {
-                $quantityUser = $carts[$productId]['quantity'] + 1;
+                $q = $carts[$productId]['quantity'];
+                $quantityUser = $q + 1;
+                info($quantityUser);
                 $carts[$productId] = [
                     'product_id' => $productId,
                     'quantity' => $quantityUser,
                     'product_info' => $productDB,
                 ];
                 session(['carts' => $carts]);
-
             }
         }
-        // session(['carts' => $carts]);
-        // dd(session('carts'));
 
-        return redirect()->back()->with('success', 'Add sản phẩm vào Giỏ hàng thành công.');
+        $qtyCart = count(session('carts'));
+
+        return response()->json(['qtyCart' => $qtyCart], 200);
     }
 
-    public function updateQuantity($productId, Request $request)
+    public function calculateCartApi(Request $request)
     {
-        $carts = session('carts') ?? [];
-        if (empty($carts)) {
-            return redirect()->route('client.carts')->with('error', 'Cart chưa có sản phẩm nào cả.');
-        }
+        $productId = $request->product_id;
+        $qtyRequest = $request->qty;
+        $carts = session('carts');
 
         $productDB = Product::findOrFail($productId);
-        $quantityDB = $productDB->quantity;
+        $quantityDB = $productDB->quantity;//5
 
-        $quantityUser = $request->quantity;
-
+        //5 
+        $quantityUser = $carts[$productId]['quantity'] + $qtyRequest;
+        if ($quantityUser == 0){
+            unset($carts[$productId]);
+            session(['carts' => $carts]);
+            return response()->json(0, 200);
+        }
         // Check Quantity
         // Kiểm tra tồn kho: nếu $quantityUser gửi lên vượt số lượng có trong kho ($quantityDB)
         // thì sẽ thông báo lỗi.
         if ($quantityDB < $quantityUser) {
-            return back()->with('error', 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.');
+            return response()->json(['message' => 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.']);
         }
 
         // Validate OK (check quantity OK)
@@ -102,12 +101,6 @@ class CartController extends Controller
         session(['carts' => $carts]);
 
         // return về trang danh sách sản phẩm có trong Cart
-        return redirect()->route('cart')->with('success', 'Update quantity thành công.');
-    }
-
-    public function RemoveOneProduct($productId)
-    {
-
+        return response()->json('ok', 200);
     }
 }
-
