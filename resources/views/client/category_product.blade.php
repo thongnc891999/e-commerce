@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="products__list">
-                <div class="products__panner">
+                {{-- <div class="products__panner">
                     <img src="./img/The_Sill_84_Hester.png" alt="">
                 </div>
                 <nav class="products__list--nav">
@@ -83,16 +83,16 @@
                             <option value="time">Thời gian</option>
                             <option value="price">Giá tiền</option>
                         </select>
-                        {{-- <p>Show</p>
+                        <p>Show</p>
                         <select name="nav__number_show" id="nav__number_show">
                             <option value="6">6</option>
                             <option value="9">9</option>
                             <option value="12">12</option>
                             <option value="15">15</option>
-                        </select> --}}
+                        </select>
                     </div>
 
-                </nav>
+                </nav> --}}
                 {{-- <input type="radio" name="display" class="display__type" id="display__list"> --}}
                 <div class="products__display" id="list">
                     @foreach($category_products as $category_product)
@@ -113,13 +113,12 @@
                                 bất ngờ để bạn tặng "người ấy". Ngọc ngân (Valentine) không chỉ đẹp ở phiến lá
                                 xanh đốm trắng.</p>
 
-                            <h4 class="product__price">{{ number_format($category_product->price). ' VND'}}<span
+                            <h4 class="product__price">{{ number_format($category_product->price).'₫'}}<span
                                     class="product__price--old"></span> </h4>
                         </div>
                     </div>
                     @endforeach
                 </div>
-                <button class="submitBtn" type="button">test</button>
                 <div class="products__pages">
                     {{ $category_products->links() }}
                 </div>

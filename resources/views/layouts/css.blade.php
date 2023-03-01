@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/product/style_product.css') }}">
     <link rel="stylesheet" href="{{ asset('css/newses/style_news.css') }}">
     <link rel="stylesheet" href="{{ asset('css/news/style_news.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/checkout/style_checkout.css') }}">
 
     {{-- /**
 * define CSS file GLOBAL

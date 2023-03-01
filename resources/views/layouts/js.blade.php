@@ -18,28 +18,28 @@
 */ --}}
 
 <script>
-    quantity = document.getElementById('quantity');
+    // quantity = document.getElementById('quantity');
     
-    button_up=document.getElementById('up');
-    button_down=document.getElementById('down');
+    // button_up=document.getElementById('up');
+    // button_down=document.getElementById('down');
     
-    if (button_up) {
-        button_up.onclick=function() {setQuantity('up');}
-    }
-    if (button_down) {
-        button_down.onclick=function() {setQuantity('down');}
-    }
-    function setQuantity(upordown) {
-        var quantity = document.getElementById('quantity');
+    // if (button_up) {
+    //     button_up.onclick=function() {setQuantity('up');}
+    // }
+    // if (button_down) {
+    //     button_down.onclick=function() {setQuantity('down');}
+    // }
+    // function setQuantity(upordown) {
+    //     var quantity = document.getElementById('quantity');
     
-        if (quantity.value > 1) {
-            if (upordown == 'up'){++quantity.value;}
-            else if (upordown == 'down'){--quantity.value;}}
-        else if (quantity.value == 1) {
-            if (upordown == 'up'){++quantity.value;}}
-        else
-            {quantity.value= 1;}
-    }
+    //     if (quantity.value > 1) {
+    //         if (upordown == 'up'){++quantity.value;}
+    //         else if (upordown == 'down'){--quantity.value;}}
+    //     else if (quantity.value == 1) {
+    //         if (upordown == 'up'){++quantity.value;}}
+    //     else
+    //         {quantity.value= 1;}
+    // }
 
     $(document).ready(function() {
         $('.addCart').click(function() {
@@ -67,7 +67,6 @@
 
         $('.calculate').click(function() {
             let value = $(this).text();
-
             qty = 1;
             if (value === '-') {
                 qty = -1;
@@ -80,7 +79,9 @@
             })
             .then(data => {
                 //Data trả về
-                if (data.data == 0) {
+                response = data.data;
+                $(`.productPrice${response.productId}`).text(response.productPrice);
+                if (response == 0) {
                     location.reload();
                 }
             }).catch(error => {

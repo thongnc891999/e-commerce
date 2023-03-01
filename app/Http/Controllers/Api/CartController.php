@@ -14,17 +14,17 @@ class CartController extends Controller
     public function addCartApi(Request $request)
     {
         $productId = $request->product_id;
-        // session cart = data or an empty array
+        // session cart là dữ liệu hoặc 1 array rỗng
         $carts = session()->get('carts') ?? [];
   
-        // Check if the number of products is enough for sale ?
+        // Kiểm tra số lượng sản phẩm có đủ bán không
         $productDB = Product::findOrFail($productId);
         $quantityDB = $productDB->quantity;
 
-        $quantityUser = 1; // default each time user add product quantity is 1
+        $quantityUser = 1; // mặc định khi người dùng nhập lên là 1
 
         // if ($quantityDB < $quantityUser) {
-        //     return back()->with('error', 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.');
+        //     return response()->json(['message' => 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.']);
         // }
         
         
@@ -61,28 +61,28 @@ class CartController extends Controller
                 session(['carts' => $carts]);
             }
         }
-
+        
         $qtyCart = count(session('carts'));
-
+        
         return response()->json(['qtyCart' => $qtyCart], 200);
     }
 
     public function calculateCartApi(Request $request)
     {
+        $productPrice = 0;
         $productId = $request->product_id;
         $qtyRequest = $request->qty;
         $carts = session('carts');
 
         $productDB = Product::findOrFail($productId);
-        $quantityDB = $productDB->quantity;//5
-
-        //5 
+        $quantityDB = $productDB->quantity;
         $quantityUser = $carts[$productId]['quantity'] + $qtyRequest;
         if ($quantityUser == 0){
             unset($carts[$productId]);
             session(['carts' => $carts]);
             return response()->json(0, 200);
         }
+        
         // Check Quantity
         // Kiểm tra tồn kho: nếu $quantityUser gửi lên vượt số lượng có trong kho ($quantityDB)
         // thì sẽ thông báo lỗi.
@@ -93,14 +93,19 @@ class CartController extends Controller
         // Validate OK (check quantity OK)
         // thì lưu quantity mà user gửi lên vào Session
         $quantityUpdate = $quantityUser;
-
         // Update quantity into Cart
         $carts[$productId]['quantity'] = $quantityUpdate;
-
+        $productPrice = number_format($quantityUpdate * $productDB->price) . '₫';
+            
         // Update Session
         session(['carts' => $carts]);
 
         // return về trang danh sách sản phẩm có trong Cart
-        return response()->json('ok', 200);
+        return response()->json(['productId' => $productDB->id, 'productPrice' => $productPrice], 200);
     }
+    
+    // public function removeProduct( $id)
+    // {
+    
+    // }
 }

@@ -4,7 +4,8 @@
         <div class="body">
             <div class="container">
                 <div class="link-page">
-                    <h4>Home / <a href=""> Danh sách sản phẩm</a></h4>
+                    <a href="{{ route('home')}}"> Trang chủ <span class="arrow">/</span></a>
+                    <span>Danh sách sản phẩm</span>
                 </div>
                 <div class="products">
                     <div class="products__menu-vertical">
@@ -15,11 +16,11 @@
                             @foreach ($categories as $category)
                                 <li class="products__menu--item">
                                     <i class="fas fa-chevron-right"></i>
-                                    <a href="{{ route('category.product', ['id' => $category->id]) }}" class="products__menu--link">{{$category->name}}</a>
+                                    <a href="{{ route('products', ['category_id' => $category->id, 'name' => $category->name]) }}" class="products__menu--link">{{$category->name}}</a>
                                 </li>
                             @endforeach
                         </ul>
-                        <div class="products__title">
+                        {{-- <div class="products__title">
                             <p>Danh mục sản phẩm</p>
                         </div>
                         <ul class="products__menu--list">
@@ -59,29 +60,18 @@
                                 <p class="products__color--item products__color--blue">Xanh trời</p>
                                 <p class="products__color--item products__color--pink">Hồng</p>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="products__list">
                         <div class="products__panner">
                             <img src="./img/The_Sill_84_Hester.png" alt="">
                         </div>
                         <nav class="products__list--nav">
-                            <div class="products__list--icon">
-                                <input type="radio" name="display" class="display__type" id="display__grid" checked>
-                                <label for="display__grid" class="grid">
-                                    <i class="fas fa-th"></i>
-                                </label>
-
-                                <label for="display__list" class="list">
-                                    <i class="fas fa-list" id="icon-list"></i>
-                                </label>
-                            </div>
                             <div class="products__list--select">
                                 <p>Sắp xếp theo </p>
                                 <select name="nav__sort" id="nav__sort">
-                                    <option value="name">Tên sản phẩm</option>
-                                    <option value="time">Thời gian</option>
-                                    <option value="price">Giá tiền</option>
+                                    <option value="price">Tăng dần</option>
+                                    <option value="price">Giảm dân</option>
                                 </select>
                                 {{-- <p>Show</p>
                                 <select name="nav__number_show" id="nav__number_show">
@@ -97,11 +87,11 @@
                         <div class="products__display" id="list">
                             @foreach($products as $product)
                             <div class="product__card product__card--large">
-                                <img src="./img/spx2/spx2-3.png" alt="">
+                                <img src="{{ asset($product->thumbnail)}}" alt="{{ asset($product->thumbnail)}}">
                                 <div class="product__interactive">
 
-                                    <div class="product__btn">
-                                        <a href="#" class="btn btn--buy">Thêm Vào Giỏ Hàng</a>
+                                    <div class="product__btn btn_cart">
+                                        <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $product->id }}">Thêm Vào Giỏ Hàng</a>
                                         <a href="#" class="btn btn--buy">Mua Ngay</a>
                                         {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
                                     </div>
@@ -291,6 +281,7 @@
                         
                         <div class="products__pages">
                             {{ $products->links() }}
+                            
                         </div>
                     </div>
                 </div>

@@ -34,17 +34,20 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::group(['prefix' => 'products'], function () {
     Route::get('/', [ProductController::class, 'index'])->name('products');
-    // Route::get('/category{id}', [ProductController::class, 'getCategoryProducts'])->name('products');
-    Route::get('/category/{id}', [ProductController::class, 'getCategoryProducts'])->name('category.product');
     Route::get('/detail/{id}',[ProductController::class, 'getProductDetail'])->name('detail.product'); 
+    Route::get('/search',[ProductController::class, 'search'])->name('search');
 
 });
 
 Route::group(['prefix' => 'cart'], function () {
     Route::get('/', [CartController::class, 'showCart'])->name('cart');
     Route::post('/add/{id}', [CartController::class, 'addCart'])->name('add_cart');
-    Route::put('/{product_id}/update_quantity', [CartController::class, 'updateQuantity'])->name('update_quantity');
-    // Route::delete('/{product_id}/remove-product', [CartController::class, 'removeProduct'])->name('remove-product');
+    Route::put('/update_quantity/{product_id}', [CartController::class, 'updateQuantity'])->name('update_quantity');
+    Route::get('/remove_product/{product_id}', [CartController::class, 'removeProduct'])->name('remove_product');
 
   
+});
+
+Route::group(['prefix' => 'checkout', 'as' => 'checkout.'], function () {
+    Route::get('/', [CartController::class, 'checkoutCart'])->name('show');
 });

@@ -22,13 +22,16 @@ img {
   max-width: 100%;
 }
 
+.sub_logo{
+  height: 100%;
+}
 input {
   outline: none;
 }
 
 .logo {
- 
-  width: 18rem;
+  width: 20rem;
+  height: 63px;
 }
 
 body {
@@ -52,9 +55,11 @@ body {
 
 .header {
   width: 100%;
+  height: 174px;
 }
 
 .header--inner {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,8 +123,16 @@ body {
   padding-right: 1rem;
 }
 
+
+/* .header_navbar{
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+} */
+
 .header__body {
   background: url(../img/bg-header.png);
+  height: 115px;
   /* height: 12rem; */
 }
 
@@ -142,21 +155,21 @@ body {
 
 .header__body--right input {
   margin-top: 1rem;
-  padding: 1.5rem 30rem 1.5rem 3rem;
+  padding: 1.2rem 6rem 1.2rem 3rem;
   font-size: 1.4rem;
   border: 0;
   outline: none;
-  max-width: 39rem;
-  border-radius: 4rem;
+  max-width: 30rem;
+  /* border-radius: 4rem; */
 }
 
-.header__body--right .fa-search {
-  padding: 1.5rem 2rem;
-  background-color: #ffffff;
+
+
+.fa-search {
+  padding: 7px 11px;
+  background-color: #dac7c7;
   margin-left: -2rem;
-  border-end-end-radius: 4rem;
-  border-top-right-radius: 4rem;
-  border-left: 1px solid #b1afaf;
+  border: none;
 }
 
 .header__body--mid {
@@ -205,6 +218,7 @@ body {
   font-size: 1.4rem;
   color: #ffffff;
   display: block;
+  text-decoration: none;
 }
 
 .header .menu__item:hover {
@@ -354,7 +368,7 @@ body {
 
 .link-page {
   padding-top: 2rem;
-  margin-left: 1.5rem;
+  /* margin-left: 1.5rem;  */
   margin-bottom: 1.9rem;
 }
 

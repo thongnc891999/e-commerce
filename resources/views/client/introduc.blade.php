@@ -3,6 +3,10 @@
 @section('content')
     <div class="body">
         <div class="container">
+            <div class="link-page">
+                <a href="{{ route('home')}}"> Trang chủ <span class="arrow">/</span></a>
+                <span>Giới thiệu</span>
+            </div>
             <header class="page_header">
                 <h1>GIỚI THIỆU</h1>
             </header>

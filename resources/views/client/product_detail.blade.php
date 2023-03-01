@@ -5,7 +5,8 @@
 <div class="body">
     <div class="container">
         <div class="link-page">
-            <h4>Home / <a href=""> Cây dạ lam</a></h4>
+            <a href="{{ route('home')}}"> Trang chủ <span class="arrow">/</span></a>
+            <span>Chi tiết</span>
         </div>
         <div class="product-detail">
             <div class="product-detail__left">
@@ -36,12 +37,12 @@
                     15-20cm. Lá có màu xanh đậm ở mặt trên, quanh gân lá có màu trắng sữa; mặt dưới lá nhạt màu
                     hơn. Lá cây dạ lam mọc cách, cuống lá dài khi rụng để lại các khía màu nâu nhạt.</p>
                 <form action="{{ route('add_cart', $product->id) }}" method="post">
-                    <div class="product-detail__right--amount">
+                    {{-- <div class="product-detail__right--amount">
                         <p class=" btn--amount title">Số lượng</p>
                         <a class="btn--amount btn-sub">-</a>
                         <input class="product--amount" type="text" value="1">
                         <a class="btn--amount btn-add">+</a>
-                    </div>
+                    </div> --}}
                     <div class="product-detail__right--btn">
                             @csrf
                             <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>

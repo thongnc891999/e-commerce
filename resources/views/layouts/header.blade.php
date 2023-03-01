@@ -1,6 +1,6 @@
 <div class="header">
 
-    <div class="header__head">
+    {{-- <div class="header__head">
         <div class="container header--inner">
             <div class="header__head--left">
                 <p><i class="fas fa-clock"></i>Open time: 8:00 - 18:00 Monday - Sunday</p>
@@ -21,25 +21,28 @@
 
 
         </div>
-    </div>
+    </div> --}}
     <div class="header__body">
         <div class="container header--inner">
             <div class="header__body--left">
                 <a href="./home.html"> <img src="./img/logo.png" alt="" class="logo"></a>
-                <a href="./home.html"> <img src="./img/beside_logo.png" alt=""></a>
+                <a href="./home.html"> <img src="./img/beside_logo.png" alt="" class="sub_logo"></a>
             </div>
             <div class="header__body--right">
                 <div class="header__body--mid">
                     <p><i class="fas fa-phone-alt"></i>Hỗ trợ : (04) 6674 2332 - (04) 3786 8904</p>
-                    <div class="header__body--search">
-                        <input type="text" class="header__body--search" placeholder="Tìm kiếm...">
-                        <i class="fas fa-search"></i>
-                    </div>
+                    <form action="{{ route('search')}}" method="get">
+                        <div class="header__body--search">
+                            <input type="text" class="header__body--search" placeholder="Tìm kiếm...">
+                            <button type="submit" class="fa-search"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                    
 
                 </div>
                 <div class="header__body--cart">
                     <a href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i></a>
-                    <p><span class="cartQty">{{ $cartQty }}</span> Sản phẩm</p>
+                    <p>Giỏ Hàng (<span class="cartQty">{{ $cartQty }}</span>)</p>
                 </div>
 
             </div>

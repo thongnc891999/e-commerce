@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CategoryController;
-
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -29,9 +29,13 @@ class ProductController extends Controller
     */
    public function index()
    {
+        $categoryId = request()->category_id ?? '';
         $categoriesCtl = new CategoryController;
         $categories = $categoriesCtl->getAllCategories();
-        $products = Product::paginate(9);
+        $products = Product::when($categoryId, function ($query) use ($categoryId) {
+            return $query->where('category_id',$categoryId);
+        })->paginate(9);
+
         // dd($products);
         return view('client.product_page')->with(
         [
@@ -40,18 +44,6 @@ class ProductController extends Controller
         ]);
    }
 
-   public function getCategoryProducts($categoryId)
-   {
-        $categoriesCtl = new CategoryController;
-        $categories = $categoriesCtl->getAllCategories();
-        $category_products = Product::where('category_id',$categoryId)->paginate(9);
-        
-        //    dd(session('carts'));
-            return view('client.category_product')->with([
-            'categories'            => $categories,
-            'category_products'     => $category_products,
-            ]);
-   }
 
    public function getProductDetail($id){
   
@@ -71,7 +63,7 @@ class ProductController extends Controller
 
     public function getDiscountProducts()
     {
-        return $this->getDataProducts()->productDiscount()->limit(7)->get(); 
+        return $this->getDataProducts()->productDiscount()->limit(5)->get(); 
     }
 
 
@@ -81,7 +73,16 @@ class ProductController extends Controller
         return $this->getDataProducts()->productNew()->limit(8)->get(); 
     }
     
-    
+    public function search(Request $request){
+        $name = $request->name;
+        $products = Product::Where('name', 'like', '%'. $name .'%' )->get();
+        $categories = Category::Where('name', 'like', '%'. $name .'%')->get();
+        // dd($productsDB);
+        return view('client.product_page')->with([
+                'products'      => $products,
+                'categories'    => $categories,
+            ]);
+    }
 
     /**
      * Show the form for creating a new resource.

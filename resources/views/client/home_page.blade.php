@@ -30,14 +30,10 @@
                     @foreach ($hotProducts as $hotproduct)
                         @if($loop->iteration <= $hotProducts->count()/2)
                             <div class="product__card product__card--large">
-                                <img src="img/spx2/spx2-7.png" alt="">
+                                <img src="{{ asset($hotproduct->thumbnail)}}" alt="{{ asset($hotproduct->thumbnail)}}">
                                 <div class="product__interactive">
-                                    <h3 class="product__status product__status--new">New</h3>
-                                    <div class="product__btn">  
-                                        <form action="{{ route('add_cart', $hotproduct->id) }}" method="post">
-                                            @csrf
-                                            <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>
-                                        </form>
+                                    <div class="product__btn">
+                                        <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $hotproduct->id }}">Thêm Vào Giỏ Hàng</a>
                                         <a href="{{route('detail.product', $hotproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
@@ -45,7 +41,7 @@
                                 <div class="product__content">
                                     <h4 class="product__name">{{ $hotproduct->name }}</h4>
                                     <h4 class="product__price">
-                                        {{ number_format($hotproduct->price). ' VND'}}
+                                        {{ number_format($hotproduct->price).'₫'}}
                                         {{-- <span class="product__price--old">450.000₫</span> --}}
                                     </h4>
                                 </div>
@@ -58,14 +54,11 @@
                     @foreach ($hotProducts as $hotproduct)
                         @if($loop->iteration > $hotProducts->count()/2)
                             <div class="product__card product__card--large">
-                                <img src="img/spx2/spx2-1.png" alt="">
+                                <img src="{{ asset($hotproduct->thumbnail)}}" alt="{{ asset($hotproduct->thumbnail)}}">
                                 <div class="product__interactive">
-                                    <h3 class="product__status product__status--new">New</h3>
                                     <div class="product__btn">
-                                        <form action="{{ route('add_cart', $hotproduct->id) }}" method="post">
-                                            @csrf
-                                            <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>
-                                        </form>
+                                        
+                                        <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $hotproduct->id }}">Thêm Vào Giỏ Hàng</a>
                                         <a href="{{route('detail.product', $hotproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
@@ -73,7 +66,7 @@
                                 <div class="product__content">
                                     <h4 class="product__name">{{ $hotproduct->name }}</h4>
                                     <h4 class="product__price">
-                                        {{ number_format($hotproduct->price). ' VND'}}
+                                        {{ number_format($hotproduct->price).'₫'}}
                                         {{-- <span class="product__price--old">450.000₫</span> --}}
                                     </h4>
                                 </div>
@@ -106,14 +99,10 @@
                     <div class="product__discount-row">
                         @foreach($discountProducts as $discountProduct)
                         <div class="product__card product__card--large">
-                            <img src="img/spx2/spx2-7.png" alt="">
+                            <img src="{{ asset($discountProduct->thumbnail)}}" alt="{{ asset($discountProduct->thumbnail)}}">
                             <div class="product__interactive">
-                                <h3 class="product__status product__status--new">New</h3>
-                                <div class="product__btn">
-                                    <form action="{{ route('add_cart', $discountProduct->id) }}" method="post">
-                                        @csrf
-                                        <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>
-                                    </form>
+                                <div class="product__btn btn_cart">
+                                    <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $discountProduct->id }}">Thêm Vào Giỏ Hàng</a>
                                     <a href="{{route('detail.product', $discountProduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                 </div>
 
@@ -121,7 +110,7 @@
                             <div class="product__content">
                                 <h4 class="product__name">{{  $discountProduct->name }}</h4>
                                 <h4 class="product__price">
-                                    {{ number_format($discountProduct->price). ' VND'}}
+                                    {{ number_format($discountProduct->price).'₫'}}
                                     {{-- <span class="product__price--old">450.000₫</span> --}}
                                 </h4>
                             </div>
@@ -153,14 +142,10 @@
                     @foreach ($newProducts as $newproduct)
                         @if($loop->iteration <= $newProducts->count()/2)
                             <div class="product__card product__card--large">
-                                <img src="img/spx2/spx2-7.png" alt="">
+                                <img src="{{ asset($newproduct->thumbnail)}}" alt="{{ asset($newproduct->thumbnail)}}">
                                 <div class="product__interactive">
-                                    <h3 class="product__status product__status--new">New</h3>
                                     <div class="product__btn">
-                                        <form action="{{ route('add_cart', $newproduct->id) }}" method="post">
-                                            @csrf
-                                            <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>
-                                        </form>
+                                        <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $newproduct->id }}">Thêm Vào Giỏ Hàng</a>
                                         <a href="{{route('detail.product', $newproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
@@ -168,7 +153,7 @@
                                 <div class="product__content">
                                     <h4 class="product__name">{{ $newproduct->name }}</h4>
                                     <h4 class="product__price">
-                                        {{ number_format($newproduct->price). ' VND'}}
+                                        {{ number_format($newproduct->price).'₫'}}
                                         {{-- <span class="product__price--old">450.000₫</span> --}}
                                     </h4>
                                 </div>
@@ -181,14 +166,10 @@
                     @foreach ($newProducts as $newproduct)
                         @if($loop->iteration > $newProducts->count()/2)
                             <div class="product__card product__card--large">
-                                <img src="img/spx2/spx2-1.png" alt="">
+                                <img src="{{ asset($newproduct->thumbnail)}}" alt="{{ asset($newproduct->thumbnail)}}">
                                 <div class="product__interactive">
-                                    <h3 class="product__status product__status--new">New</h3>
                                     <div class="product__btn">
-                                        <form action="{{ route('add_cart', $newproduct->id) }}" method="post">
-                                            @csrf
-                                            <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>
-                                        </form>
+                                        <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $newproduct->id }}">Thêm Vào Giỏ Hàng</a>   
                                         <a href="{{route('detail.product', $newproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
@@ -196,7 +177,7 @@
                                 <div class="product__content">
                                     <h4 class="product__name">{{ $newproduct->name }}</h4>
                                     <h4 class="product__price">
-                                        {{ number_format($newproduct->price). ' VND'}}
+                                        {{ number_format($newproduct->price).'₫'}}
                                         {{-- <span class="product__price--old"></span> --}}
                                     </h4>
                                 </div>

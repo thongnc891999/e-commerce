@@ -28,7 +28,8 @@
     <div class="body">
         <div class="container">
             <div class="link-page">
-                <h4>Home / <a href=""> Giỏ hàng</a></h4>
+                <a href="{{ route('home')}}"> Trang chủ <span class="arrow">/</span></a>
+                <span>Giỏ Hàng</span>
             </div>
             <div class="cart">
                 <h3 class="cart__title">GIỎ HÀNG</h3>
@@ -39,7 +40,7 @@
                         <th>ĐƠN GIÁ</th>
                         <th>SỐ LƯỢNG</th>
                         <th>THÀNH TIỀN</th>
-                        {{-- <th>XÓA</th> --}}
+                        <th>XÓA</th>
                     </thead>
                     <tbody>
                         @php
@@ -67,7 +68,7 @@
                                 <span>{{$productName}}</span>
                             </th>
                             <th>
-                                <span>{{number_format($productPrice) }} VNĐ</span>
+                                <span>{{number_format($productPrice).'₫' }}</span>
                             </th>
                             <th>
                                 <div class="order-option">
@@ -84,19 +85,15 @@
                                     </span>
                                 </div>
                             </th>
-                            <th>
-                                {{ number_format($money) }} VNĐ
+                            <th class="productPrice{{ $value['product_id']; }}">
+                                {{ number_format($money).'₫' }} 
                             </th>
-                            {{-- <th> <a href=""><i class="fas fa-trash-alt"></i></a></th> --}}
+                            <th> <a href="{{ route('remove_product',['product_id' => $productInfo->id])}}"><i class="fas fa-trash-alt"></i></a></th>
 
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <div class="cart__btn">
-                    <a href="#" class=" btn cart__btn--delete">HỦY ĐƠN HÀNG</a>
-                    <a href="#" class="btn cart__btn--continue">TIẾP TỤC MUA</a>
-                </div>
                 <div class="cart__pay">
                     <table>
                         <tr>
@@ -104,25 +101,25 @@
                                 TỔNG TIỀN
                             </th>
                             <th>
-                                270.000đ
+                                {{ number_format($totalMoney).'₫' }} 
                             </th>
                         </tr>
                         <tr>
                             <th>
-                                THUẾ (VAT 10%)
+                                GIẢM GIÁ
                             </th>
                             <th>
-                                27.000đ
+                                20.000₫
                             </th>
 
                         </tr>
                         <tfoot>
                             <th>TỔNG PHẢI THANH TOÁN</th>
-                            <th>297.000 đ</th>
+                            <th>250.000 ₫</th>
                         </tfoot>
                     </table>
                     <div class="cart__pay--btn">
-                        <a href="#" class="btn cart__btn--pay">THANH TOÁN</a>
+                        <a href="{{ route('checkout.show') }}" class="cart__btn--pay">THANH TOÁN</a>
                     </div>
                 </div>
             </div>
