@@ -12,6 +12,7 @@ class CategoryController extends Controller
     {
         return Category::query();
     }
+
     // Lấy ra tất cả record trong table categories
     public function getAllCategories()
     {

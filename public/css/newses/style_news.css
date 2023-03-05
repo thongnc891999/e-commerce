@@ -4,9 +4,10 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
+      /* -ms-flex-direction: row; */
+          /* flex-direction: row; */
+  /* width: 30%; */
+  width: 80%;
   margin: 0 !important;
   padding-left: 0 !important;
   padding-bottom: 4rem;
@@ -30,7 +31,7 @@
 
 .news__item--info {
   font-size: 1.2rem;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   margin-top: 1rem;
   color: #636363;
 }

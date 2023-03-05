@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
     use HasFactory;
-    //use SoftDeletes;
+    use SoftDeletes;
 
-    const STATUS_PRODUCT_HOT = 0;
-    const STATUS_PRODUCT_DISCOUNT = 1;
-    const STATUS_PRODUCT_NEW = 2;
+    
+    const STATUS_PRODUCT_DISCOUNT = 0; //0: Hằng số sản phẩm giảm giá 
+    const STATUS_PRODUCT_HOT = 1; //1: Hằng số sản phẩm nổi bật
+    const STATUS_PRODUCT_NEW = 2; //0: Hằng số sản phẩm mới 
 
 
     protected $table = 'products';
@@ -20,7 +22,7 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
-        'image', // dat la so it ay : image hoac thumbnail ---> sua lai file migrate, reset lai DB
+        'thumbnail', // dat la so it ay : image hoac thumbnail ---> sua lai file migrate, reset lai DB
         'price',
         'status',
         'quantity',
@@ -37,13 +39,14 @@ class Product extends Model
     public function product_images(){
         return $this->hasMany(ProductImage::class);
     }
+
+    // public function product_detail(){
+    //     return $this->hasOne(ProductDetail::class);
+    // }
+    
     /**
      * Get the post_detail for the post.
      */
-    public function product_detail()
-    {
-        return $this->hasOne(ProductDetail::class);
-    }
     public function price()
     {
         return $this->hasOne(Price::class);

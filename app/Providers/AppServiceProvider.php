@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Register Bootstrap
+        Paginator::useBootstrap();
+
+        view()->composer('*', function ($view) {
+            $cartQty = session('carts') ? count(session('carts')) : 0;
+            $view->with('cartQty', $cartQty);
+        });
     }
 }

@@ -38,12 +38,14 @@
         resetTimer();
     }
     function resetTimer(){
-        clearInterval(timer);
+        clearInterval(timer); 
         timer = setInterval(autoSlide,timeSleep);
     }
     function displaySlide(n){
-        document.querySelector('.first').style.marginLeft = n* (-100) +"%";
-        document.querySelectorAll('.circle__item input')[n].checked =true;
+        if (document.querySelector('.first')) {
+            document.querySelector('.first').style.marginLeft = n* (-100) +"%";
+            document.querySelectorAll('.circle__item input')[n].checked =true;
+        }
         
     }
     ///slide in mid

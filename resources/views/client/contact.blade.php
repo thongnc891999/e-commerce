@@ -4,7 +4,8 @@
     <div class="body">
         <div class="container">
             <div class="link-page">
-                <h4>Home / <a href=""> Liên hệ</a></h4>
+                <a href="{{ route('home')}}"> Trang chủ <span class="arrow">/</span></a>
+                <span>Liên hệ</span>
             </div>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d4114.094992599367!2d108.15959827702835!3d16.074685097275058!3m2!1i1024!2i768!4f13.1!5e1!3m2!1svi!2s!4v1624616081720!5m2!1svi!2s"

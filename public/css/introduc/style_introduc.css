@@ -1,0 +1,24 @@
+.page_header {
+    font-size: 32px;
+    color: #00a651;
+    text-align: left;
+    font-family: Roboto Condensed;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.rte p {
+    margin: 5px 0 20px;
+}
+
+.introduct_text {
+    color: #000000;
+    font-size: 14px;
+    font-family: Roboto Condensed !important;
+    box-sizing: border-box;
+}
+
+.introduct_text strong {
+    font-weight: bold;
+    box-sizing: border-box;
+}

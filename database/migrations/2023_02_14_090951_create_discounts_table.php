@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_details', function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->string('name');
+            $table->date('star_date');
+            $table->date('end_date');
+            $table->tinyInteger('type')->default('0')->comment('0: (percent) giảm giá theo %, 1: (percent) giảm giá  theo voucher');
+            $table->integer('discount');
+            $table->text('description');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_details');
+        Schema::dropIfExists('discounts');
     }
 };
