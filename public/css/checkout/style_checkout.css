@@ -51,9 +51,9 @@
     display: block;
 }
 
-.row:first-child>.col:first-child {
+/* .row:first-child>.col:first-child {
     padding-top: 0;
-}
+} */
 
 .col--two {
     width: 50%;
@@ -67,9 +67,6 @@
     display: block
 }
 
-.section:first-child {
-    padding-top: 0;
-}
 
 .section__header {
     margin-bottom: 12px;
@@ -148,11 +145,19 @@
     padding-left: 0.9em;
 }
 
-.radio-wrapper:after, .radio-wrapper:before, .checkbox-wrapper:after, .checkbox-wrapper:before {
+/* .radio-wrapper:after, .radio-wrapper:before, .checkbox-wrapper:after, .checkbox-wrapper:before {
     content: "";
     display: table;
-}
+} */
 
+
+.select2-container {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
+}
 /* .field__input, .input-checkbox, .input-radio, button, textarea {
     font: inherit;
     margin: 0;

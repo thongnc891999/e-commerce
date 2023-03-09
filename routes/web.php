@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
@@ -7,7 +8,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewProductController;
 use App\Http\Controllers\FloatingNewController;
 use App\Http\Controllers\ProductController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +19,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/introduc', function(){
@@ -39,7 +47,7 @@ Route::group(['prefix' => 'products'], function () {
 
 });
 
-Route::group(['prefix' => 'cart'], function () {
+Route::group(['prefix' => 'cart', 'middleware' => 'auth'], function () {
     Route::get('/', [CartController::class, 'showCart'])->name('cart');
     Route::post('/add/{id}', [CartController::class, 'addCart'])->name('add_cart');
     Route::put('/update_quantity/{product_id}', [CartController::class, 'updateQuantity'])->name('update_quantity');

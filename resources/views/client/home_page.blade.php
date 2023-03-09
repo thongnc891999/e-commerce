@@ -101,9 +101,9 @@
                         <div class="product__card product__card--large">
                             <img src="{{ asset($discountProduct->thumbnail)}}" alt="{{ asset($discountProduct->thumbnail)}}">
                             <div class="product__interactive">
-                                <div class="product__btn btn_cart">
-                                    <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $discountProduct->id }}">Thêm Vào Giỏ Hàng</a>
-                                    <a href="{{route('detail.product', $discountProduct['id'])}}" class="btn btn--buy">Chi tiết</a>
+                                <div class="product__btn btn_list_discount">
+                                    <a href="javascript:void(0);" class="btn btn--buy btn_discount addCart" data-id="{{ $discountProduct->id }}">Thêm Vào Giỏ Hàng</a>
+                                    <a href="{{route('detail.product', $discountProduct['id'])}}" class="btn btn--buy btn_discount">Chi tiết</a>
                                 </div>
 
                             </div>

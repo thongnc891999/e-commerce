@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('birthday')->nullable();
             $table->string('phone', 30)->nullable();
             $table->string('address')->nullable();
-            $table->unsignedInteger('is_role');
+            // $table->unsignedInteger('is_role');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

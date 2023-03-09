@@ -32,7 +32,10 @@
                 <span>Giỏ Hàng</span>
             </div>
             <div class="cart">
-                <h3 class="cart__title">GIỎ HÀNG</h3>
+                <div class="cart_head">
+                    <h3 class="cart__title">GIỎ HÀNG</h3>
+                    <a href="{{ route('products')}}" title="Continue Shopping" class="continue">Tiếp tục mua hàng</a>
+                </div>    
                 <table class="cart__table">
                     <thead>
                         <th>HÌNH ẢNH</th>
@@ -56,13 +59,13 @@
                                 $productPrice = $productInfo->price;
                                 $money = $productPrice * $value['quantity'];
 
-                                // update $totalMoney, $totalQuantity
-                                $totalQuantity = $totalQuantity + $value['quantity'];
+                                // // update $totalMoney, $totalQuantity
+                                // $totalQuantity = $totalQuantity + $value['quantity'];
                                 $totalMoney = $totalMoney + $money;
                             @endphp
                         <tr>
                             <th>
-                                <img src="./img/spx2/spx2-1.png" alt="">
+                                <img src="{{ asset($productThumbnail)}}" alt="{{ asset($productThumbnail)}}">
                             </th>
                             <th>
                                 <span>{{$productName}}</span>
@@ -100,23 +103,10 @@
                             <th>
                                 TỔNG TIỀN
                             </th>
-                            <th>
-                                {{ number_format($totalMoney).'₫' }} 
+                            <th class="totalPrice">
+                                {{ number_format( $totalMoney).'₫' }} 
                             </th>
                         </tr>
-                        <tr>
-                            <th>
-                                GIẢM GIÁ
-                            </th>
-                            <th>
-                                20.000₫
-                            </th>
-
-                        </tr>
-                        <tfoot>
-                            <th>TỔNG PHẢI THANH TOÁN</th>
-                            <th>250.000 ₫</th>
-                        </tfoot>
                     </table>
                     <div class="cart__pay--btn">
                         <a href="{{ route('checkout.show') }}" class="cart__btn--pay">THANH TOÁN</a>
