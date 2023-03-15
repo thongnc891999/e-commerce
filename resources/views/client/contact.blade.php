@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="contact__right">
-                    <img src="./img/logo.png" alt="">
+                    <img src="{{ asset('./img/logo.png')}}" alt="">
                     <p>DKT được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực Thương mại điện
                         tử.Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng những sản phẩm</p>
                     <a href="tel:+8418006750"> <i class="fas fa-phone"></i> 1800 6750</a>

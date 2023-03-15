@@ -54,24 +54,20 @@
                         @foreach ($carts as $value)
                             @php
                                 $productInfo = $value['product_info'];
-                                $productName = $productInfo->name;
-                                $productThumbnail = $productInfo->thumbnail;
-                                $productPrice = $productInfo->price;
-                                $money = $productPrice * $value['quantity'];
-
-                                // // update $totalMoney, $totalQuantity
-                                // $totalQuantity = $totalQuantity + $value['quantity'];
+                                $money = $productInfo->price * $value['quantity'];
                                 $totalMoney = $totalMoney + $money;
                             @endphp
                         <tr>
                             <th>
-                                <img src="{{ asset($productThumbnail)}}" alt="{{ asset($productThumbnail)}}">
+                                <img src="{{ asset($productInfo->thumbnail)}}" alt="{{ asset($productInfo->thumbnail)}}">
                             </th>
                             <th>
-                                <span>{{$productName}}</span>
+                                <span>{{$productInfo->name}}</span>
                             </th>
                             <th>
-                                <span>{{number_format($productPrice).'₫' }}</span>
+                                <span>
+                                    {{$productInfo->price .'₫' }}
+                                </span>
                             </th>
                             <th>
                                 <div class="order-option">
@@ -89,7 +85,7 @@
                                 </div>
                             </th>
                             <th class="productPrice{{ $value['product_id']; }}">
-                                {{ number_format($money).'₫' }} 
+                                {{$money}} 
                             </th>
                             <th> <a href="{{ route('remove_product',['product_id' => $productInfo->id])}}"><i class="fas fa-trash-alt"></i></a></th>
 
@@ -103,9 +99,9 @@
                             <th>
                                 TỔNG TIỀN
                             </th>
-                            <th class="totalPrice">
-                                {{ number_format( $totalMoney).'₫' }} 
-                            </th>
+                            <th class="totalPrice" data-totalprice="{{$totalMoney}}">
+                                {{$totalMoney}} 
+                            </th>   
                         </tr>
                     </table>
                     <div class="cart__pay--btn">

@@ -29,8 +29,9 @@ class ProductController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-   public function index()
-   {
+
+    public function index()
+    {
         $categoryId = request()->category_id ?? '';
         $categoriesCtl = new CategoryController;
         $categories = $categoriesCtl->getAllCategories();
@@ -46,16 +47,16 @@ class ProductController extends Controller
             'categories'  => $categories,
             'products'    => $products,           
         ]);
-   }
+    }
 
 
-   public function getProductDetail($id){
-    $product = Product::whereId($id)->with('productImages')->first();
-    // dd($product);
-    return view('client.product_detail')->with([
-        'product'       =>$product,
-    ]);
-   }
+    public function getProductDetail($id){
+        $product = Product::whereId($id)->with('productImages')->first();
+        // dd($product);
+        return view('client.product_detail')->with([
+            'product'       =>$product,
+        ]);
+    }
 
     public function getHotProducts()
     {
@@ -88,6 +89,14 @@ class ProductController extends Controller
                 'products'   => $products,
                 'categories'       => $categories,
             ]);
+    }
+
+    public function sortAscendingByPrice(){
+        $pricesIncreaseGradually = Product::orderBy('price');
+    }
+
+    public function sortDescendingByPrice(){
+
     }
 
     /**

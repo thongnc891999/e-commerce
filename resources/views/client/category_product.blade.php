@@ -1,7 +1,7 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 
-@section('content')
-<div class="body">
+    @section('content')
+    <div class="body">
     <div class="container">
         <div class="link-page">
             <h4>Home / <a href=""> Danh sách sản phẩm</a></h4>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="products__list">
-                {{-- <div class="products__panner">
+                <div class="products__panner">
                     <img src="./img/The_Sill_84_Hester.png" alt="">
                 </div>
                 <nav class="products__list--nav">
@@ -92,8 +92,8 @@
                         </select>
                     </div>
 
-                </nav> --}}
-                {{-- <input type="radio" name="display" class="display__type" id="display__list"> --}}
+                </nav>
+                <input type="radio" name="display" class="display__type" id="display__list">
                 <div class="products__display" id="list">
                     @foreach($category_products as $category_product)
                     <div class="product__card product__card--large">
@@ -103,7 +103,7 @@
                             <div class="product__btn">
                                 <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $category_product->id }}">Thêm Vào Giỏ Hàng</a>
                                 <a href="" class="btn btn--buy">Mua Ngay</a>
-                                {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
+                                <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a>
                             </div>
 
                         </div>
@@ -130,4 +130,4 @@
 
     
 </script>
-@endsection
+@endsection --}}

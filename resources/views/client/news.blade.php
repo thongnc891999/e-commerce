@@ -12,33 +12,33 @@
                         </div>
                         <div class="news__list">
                             <div class="news__item">
-                                <div class="news__item--img"> <img src="./img/Hard-to-kill-indoor-plants.png" alt="">
+                                <div class="news__item--img"> <img src="{{ asset('./img/Hard-to-kill-indoor-plants.png')}}" alt="">
                                 </div>
 
                                 <p class="news__item--info">Hướng dẫn lựa chọn và bố trí cây xanh trong phòng khách</p>
                             </div>
                             <div class="news__item">
-                                <div class="news__item--img"><img src="./img/11248902_984651828231999_68851709_n.png"
+                                <div class="news__item--img"><img src="{{ asset('./img/11248902_984651828231999_68851709_n.png')}}"
                                         alt=""></div>
 
                                 <p class="news__item--info">Những sai lầm nên tránh khi bố trí cây xanh trong nhà</p>
                             </div>
                             <div class="news__item">
-                                <div class="news__item--img"> <img src="./img/The_Sill_84_Hester.png" alt=""></div>
+                                <div class="news__item--img"> <img src="{{ asset('./img/The_Sill_84_Hester.png')}}" alt=""></div>
 
                                 <p class="news__item--info">Hướng dẫn lựa chọn và bố trí cây xanh trong phòng khách</p>
                             </div>
                             <div class="news__item">
-                                <div class="news__item--img"><img src="./img/Hard-to-kill-indoor-plants.png" alt="">
+                                <div class="news__item--img"><img src="{{ asset('./img/Hard-to-kill-indoor-plants.png')}}" alt="">
                                 </div>
 
                                 <p class="news__item--info">Hướng dẫn lựa chọn và bố trí cây xanh trong phòng khách</p>
                             </div>
                         </div>
-                        <div class="products__title">
+                        {{-- <div class="products__title">
                             <p>Blog tag</p>
-                        </div>
-                        <div class="blog__tag">
+                        </div> --}}
+                        {{-- <div class="blog__tag">
                             <a href="#" class="blog__tag--item blog__tag--active">Cây văn phòng</a>
                             <a href="#" class="blog__tag--item">Cây phát lộc</a>
                             <a href="#" class="blog__tag--item">Cây xanh</a>
@@ -48,7 +48,7 @@
                             <a href="#" class="blog__tag--item">Sức khỏe</a>
                             <a href="#" class="blog__tag--item">Quà tặng</a>
                             <a href="#" class="blog__tag--item">Lưu niệm</a>
-                        </div>
+                        </div> --}}
 
                     </div>
 
@@ -74,7 +74,7 @@
 
                                 </div>
                                 <div class="news__card--img">
-                                    <img src="./img/Hard-to-kill-indoor-plants.png" alt="">
+                                    <img src="{{ asset('./img/Hard-to-kill-indoor-plants.png')}}" alt="">
                                 </div>
                                 <div class="news__card--content">
                                     <p>Như thể hiện sự thân thiện cũng như sự hiếu khách của gia chủ, phần không gian
@@ -116,7 +116,7 @@
                                     vương đỏ.
                                 </div>
                                 <div class="news__card--img">
-                                    <img src="./img/The_Sill_84_Hester.png" alt="">
+                                    <img src="{{ asset('./img/The_Sill_84_Hester.png')}}" alt="">
 
                                 </div>
                                 <div class="news__card--content">
@@ -144,7 +144,7 @@
                             <ul>
                                 <div class="card__member">
                                     <div class="card__member--img">
-                                        <img src="./img/member.png" alt="">
+                                        <img src="{{ asset('./img/member.png')}}" alt="">
                                     </div>
                                     <a href="#" class="card__member--answer">Trả lời</a>
                                     <div class="card__member--info">
@@ -167,7 +167,7 @@
                                 <li>
                                     <div class="card__member">
                                         <div class="card__member--img">
-                                            <img src="./img/member.png" alt="">
+                                            <img src="{{ asset('./img/member.png')}}" alt="">
                                         </div>
                                         <a href="#" class="card__member--answer">Trả lời</a>
                                         <div class="card__member--info">
@@ -192,7 +192,7 @@
                             <ul>
                                 <div class="card__member">
                                     <div class="card__member--img">
-                                        <img src="./img/member.png" alt="">
+                                        <img src="{{ asset('./img/member.png')}}" alt="">
                                     </div>
                                     <a href="#" class="card__member--answer">Trả lời</a>
                                     <div class="card__member--info">
@@ -216,7 +216,7 @@
                                 <li>
                                     <div class="card__member">
                                         <div class="card__member--img">
-                                            <img src="./img/member.png" alt="">
+                                            <img src="{{ asset('./img/member.png')}}" alt="">
                                         </div>
                                         <a href="#" class="card__member--answer">Trả lời</a>
                                         <div class="card__member--info">

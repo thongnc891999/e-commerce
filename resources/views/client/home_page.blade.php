@@ -10,9 +10,9 @@
             <li class="circle__item "><input type="radio" onclick="currentSlide(2)" name="slide"></li>
         </ul>
         <div class="header__slide--list">
-            <img src="./img/slide-1920x590.png" alt="" class="header__slide--item first">
-            <img src="./img/slider_2.jpg" alt="" class="header__slide--item">
-            <img src="./img/slide-3.jpg" alt="" class="header__slide--item">
+            <img src="{{ asset('./img/slide-1920x590.png')}}" alt="" class="header__slide--item first">
+            <img src="{{ asset('./img/slider_2.jpg')}}" alt="" class="header__slide--item">
+            <img src="{{ asset('./img/slide-3.jpg')}}" alt="" class="header__slide--item">
 
         </div>
 
@@ -20,6 +20,7 @@
         <a class=" btn-next-right" onclick="plusSlideRight()"><i class="fas fa-chevron-right point"></i></a>
 
     </div>
+
     <div class="container">
         <div class="product__title">
             <p>Sản phẩm nổi bật</p>
@@ -34,7 +35,7 @@
                                 <div class="product__interactive">
                                     <div class="product__btn">
                                         <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $hotproduct->id }}">Thêm Vào Giỏ Hàng</a>
-                                        <a href="{{route('detail.product', $hotproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
+                                        <a href="{{route('detail_product', $hotproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
                                 </div>
@@ -59,7 +60,7 @@
                                     <div class="product__btn">
                                         
                                         <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $hotproduct->id }}">Thêm Vào Giỏ Hàng</a>
-                                        <a href="{{route('detail.product', $hotproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
+                                        <a href="{{route('detail_product', $hotproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
                                 </div>
@@ -103,7 +104,7 @@
                             <div class="product__interactive">
                                 <div class="product__btn btn_list_discount">
                                     <a href="javascript:void(0);" class="btn btn--buy btn_discount addCart" data-id="{{ $discountProduct->id }}">Thêm Vào Giỏ Hàng</a>
-                                    <a href="{{route('detail.product', $discountProduct['id'])}}" class="btn btn--buy btn_discount">Chi tiết</a>
+                                    <a href="{{route('detail_product', $discountProduct['id'])}}" class="btn btn--buy btn_discount">Chi tiết</a>
                                 </div>
 
                             </div>
@@ -122,7 +123,7 @@
             </div>
         </div>
         <div class="banner">
-            <img src="./img/banner-11140x217.png" alt="">
+            <img src="{{ asset('./img/banner-11140x217.png')}}" alt="">
         </div>
         
         <div class="product__new">
@@ -146,7 +147,7 @@
                                 <div class="product__interactive">
                                     <div class="product__btn">
                                         <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $newproduct->id }}">Thêm Vào Giỏ Hàng</a>
-                                        <a href="{{route('detail.product', $newproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
+                                        <a href="{{route('detail_product', $newproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
                                 </div>
@@ -170,7 +171,7 @@
                                 <div class="product__interactive">
                                     <div class="product__btn">
                                         <a href="javascript:void(0);" class="btn btn--buy addCart" data-id="{{ $newproduct->id }}">Thêm Vào Giỏ Hàng</a>   
-                                        <a href="{{route('detail.product', $newproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
+                                        <a href="{{route('detail_product', $newproduct['id'])}}" class="btn btn--buy">Chi tiết</a>
                                     </div>
 
                                 </div>
@@ -194,7 +195,7 @@
         <div class="news">
             <div class="news__item">
                 <div class="news__img">
-                    <img src="./img/Hard-to-kill-indoor-plants.png" alt="">
+                    <img src="{{ asset('./img/Hard-to-kill-indoor-plants.png')}}" alt="">
                 </div>
                 <small class="news__time">Thứ 7 ,ngày 31, tháng 12, năm 2015</small>
                 <h4 class="news__title">15 thiết kế phòng ngủ tuyệt đẹp làm vạn người mê </h4>
@@ -204,7 +205,7 @@
             </div>
             <div class="news__item">
                 <div class="news__img">
-                    <img src="./img/11248902_984651828231999_68851709_n.png" alt="">
+                    <img src="{{ asset('./img/11248902_984651828231999_68851709_n.png')}}" alt="">
                 </div>
 
                 <small class="news__time">Thứ 7 ,ngày 31, tháng 12, năm 2015</small>
@@ -215,7 +216,7 @@
             </div>
             <div class="news__item">
                 <div class="news__img">
-                    <img src="./img/The_Sill_84_Hester.png" alt="">
+                    <img src="{{ asset('./img/The_Sill_84_Hester.png')}}" alt="">
                 </div>
 
                 <small class="news__time">Thứ 7 ,ngày 31, tháng 12, năm 2015</small>

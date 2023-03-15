@@ -13,6 +13,7 @@ class CartController extends Controller
 
     public function addCartApi(Request $request)
     {
+        info($request->bearerToken());
         $productId = $request->product_id;
         // session cart là dữ liệu hoặc 1 array rỗng
         $carts = session()->get('carts') ?? [];
@@ -22,11 +23,6 @@ class CartController extends Controller
         $quantityDB = $productDB->quantity;
 
         $quantityUser = 1; // mặc định khi người dùng nhập lên là 1
-
-        // if ($quantityDB < $quantityUser) {
-        //     return response()->json(['message' => 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.']);
-        // }
-        
         
         if (empty($carts)) { // case 1
             $product = [
@@ -52,7 +48,7 @@ class CartController extends Controller
             } else {
                 $q = $carts[$productId]['quantity'];
                 $quantityUser = $q + 1;
-                info($quantityUser);
+                // info($quantityUser);
                 $carts[$productId] = [
                     'product_id' => $productId,
                     'quantity' => $quantityUser,
@@ -70,6 +66,7 @@ class CartController extends Controller
     public function calculateCartApi(Request $request)
     {
         $productPrice = 0;
+        $currentTotal = $request->current_total;
         $productId = $request->product_id;
         $qtyRequest = $request->qty;
         $carts = session('carts');
@@ -95,17 +92,20 @@ class CartController extends Controller
         $quantityUpdate = $quantityUser;
         // Update quantity into Cart
         $carts[$productId]['quantity'] = $quantityUpdate;
-        $productPrice = number_format($quantityUpdate * $productDB->price) . '₫';
-            
+        $productPrice = $quantityUpdate * $productDB->price;
+        
+        $currentTotal += $productDB->price * $qtyRequest;
+
+        // info($currentTotal);
         // Update Session
         session(['carts' => $carts]);
 
         // return về trang danh sách sản phẩm có trong Cart
-        return response()->json(['productId' => $productDB->id, 'productPrice' => $productPrice], 200);
+        return response()->json([
+            'productId'     => $productDB->id,  
+            'productPrice'  => $productPrice,
+            'currentTotal'  => $currentTotal,
+        ], 200);
     }
     
-    // public function removeProduct( $id)
-    // {
-    
-    // }
 }

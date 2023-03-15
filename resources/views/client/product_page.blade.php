@@ -23,7 +23,7 @@
                     </div>
                     <div class="products__list">
                         <div class="products__panner">
-                            <img src="./img/The_Sill_84_Hester.png" alt="">
+                            <img src="{{ asset('./img/The_Sill_84_Hester.png')}}" alt="">
                         </div>
                         <nav class="products__list--nav">
                             <div class="products__list--select">
@@ -42,7 +42,7 @@
 
                                     <div class="product__btn btn_list_products">
                                         <a href="javascript:void(0);" class="btn btn--buy btn_product addCart" data-id="{{ $product->id }}">Thêm Vào Giỏ Hàng</a>
-                                        <a href="{{route('detail.product', $product['id'])}}" class="btn btn--buy btn_product">Chi tiết</a>
+                                        <a href="{{route('detail_product', $product['id'])}}" class="btn btn--buy btn_product">Chi tiết</a>
                                     </div>
 
                                 </div>

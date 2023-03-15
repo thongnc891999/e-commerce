@@ -1,4 +1,5 @@
-require('./bootstrap');
+// require('./bootstrap');
+// const { ipcRenderer } = require('electron');
 
 import Alpine from 'alpinejs';
 
