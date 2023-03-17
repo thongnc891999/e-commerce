@@ -6,6 +6,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CategoryController;
 use App\Models\Category;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
@@ -27,32 +29,34 @@ class ProductController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-   public function index()
-   {
+
+    public function index()
+    {
         $categoryId = request()->category_id ?? '';
         $categoriesCtl = new CategoryController;
         $categories = $categoriesCtl->getAllCategories();
         $products = Product::when($categoryId, function ($query) use ($categoryId) {
             return $query->where('category_id',$categoryId);
         })->paginate(9);
+        
+        // Mail::to('thong891999@gmail.com')->send(new TestMail());
 
-        // dd($products);
+        // dd($categories);
         return view('client.product_page')->with(
         [
             'categories'  => $categories,
             'products'    => $products,           
         ]);
-   }
+    }
 
 
-   public function getProductDetail($id){
-  
-    $product = Product::whereId($id)->with('product_images')->first();
-    // $data['product'] = $product; 
-    return view('client.product_detail')->with([
-        'product' =>$product,
-    ]);
-   }
+    public function getProductDetail($id){
+        $product = Product::whereId($id)->with('productImages')->first();
+        // dd($product);
+        return view('client.product_detail')->with([
+            'product'       =>$product,
+        ]);
+    }
 
     public function getHotProducts()
     {
@@ -74,14 +78,25 @@ class ProductController extends Controller
     }
     
     public function search(Request $request){
-        $name = $request->name;
-        $products = Product::Where('name', 'like', '%'. $name .'%' )->get();
-        $categories = Category::Where('name', 'like', '%'. $name .'%')->get();
-        // dd($productsDB);
+        $keyword = $request->keyword;
+        $products = Product::Where('name', 'like', '%'. trim($keyword) .'%' )
+        ->orWhere('description', 'like',  '%'. trim($keyword) .'%' )->paginate(9);
+
+        $categoriesCtl = new CategoryController;
+        $categories = $categoriesCtl->getAllCategories();
+        // dd($searchProducts);
         return view('client.product_page')->with([
-                'products'      => $products,
-                'categories'    => $categories,
+                'products'   => $products,
+                'categories'       => $categories,
             ]);
+    }
+
+    public function sortAscendingByPrice(){
+        $pricesIncreaseGradually = Product::orderBy('price');
+    }
+
+    public function sortDescendingByPrice(){
+
     }
 
     /**

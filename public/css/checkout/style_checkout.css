@@ -1,5 +1,3 @@
-
-
 .content .wrap {
     flex-direction: row;
     display: flex;
@@ -21,6 +19,7 @@
 }
 
 .main__header {
+    background: #f2eee8;
     padding-bottom: 1.5em;
     display: block;
 }
@@ -35,7 +34,6 @@
 
 .logo__image--small {
     max-height: 3.85714em;
-
 }
 
 .main__content {
@@ -51,9 +49,48 @@
     display: block;
 }
 
-.row:first-child>.col:first-child {
-    padding-top: 0;
+.MqmqK4 {
+    color: #ee4d2d;
+    fill: currentColor;
 }
+
+.uk7Wpm {
+    width: 60px;
+    border: 1px solid #ee4d2d;
+    color: #ee4d2d;
+    margin-left: 215px;
+}
+
+.change_address {
+    text-decoration: none;
+    color: #17a2b8;
+}
+
+.available_address {
+    padding: 10px 0;
+    border-bottom: 1px solid #cebfbf;
+}
+
+.button_submit_address {
+    background: #dad3d3;
+    margin-top: 10px;
+    border: 1px solid #c5b5b5;
+}
+
+.OVZPZl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.OVZPZl a {
+    text-decoration: none;
+}
+
+
+/* .row:first-child>.col:first-child {
+    padding-top: 0;
+} */
 
 .col--two {
     width: 50%;
@@ -67,22 +104,27 @@
     display: block
 }
 
-.section:first-child {
-    padding-top: 0;
-}
-
 .section__header {
     margin-bottom: 12px;
 }
 
-.section__title, .modal__title, .sidebar__title, .order-summary-toggle__text {
-    color: #333;
+.section__title,
+.modal__title,
+.sidebar__title,
+.order-summary-toggle__text {
+    padding: 20px 15px;
+    border-bottom: 1px solid #cebfbf;
     font-weight: 600;
     font-size: 1.15rem;
 }
 
+.order-summary-toggle__text {
+    font-size: 2.15rem;
+}
+
 .layout-flex__item--stretch {
     flex: 1 1 auto;
+    padding: 20px 0;
 }
 
 .fieldset {
@@ -90,7 +132,6 @@
 }
 
 .field {
-    float: left;
     width: 100%;
     box-sizing: border-box;
     padding: 0.4em;
@@ -124,6 +165,7 @@
     font-size: 1em;
     transform: translateY(6px);
 }
+
 .field__label {
     text-align: left;
     margin: 0.5em 0;
@@ -139,7 +181,7 @@
     border: 1px #d9d9d9 solid;
     height: 44px;
     background-color: #fff;
-    color: #333;
+    color: #555555;
 }
 
 .floating-labels .field--show-floating-label .field__label {
@@ -148,18 +190,32 @@
     padding-left: 0.9em;
 }
 
-.radio-wrapper:after, .radio-wrapper:before, .checkbox-wrapper:after, .checkbox-wrapper:before {
+
+/* .radio-wrapper:after, .radio-wrapper:before, .checkbox-wrapper:after, .checkbox-wrapper:before {
     content: "";
     display: table;
+} */
+
+.select2-container {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    vertical-align: middle;
 }
 
-/* .field__input, .input-checkbox, .input-radio, button, textarea {
-    font: inherit;
-    margin: 0;
-    -webkit-font-smoothing: inherit;
-    background: transparent;
-    line-height: normal;
-} */
+.field_address {
+    font-family: inherit;
+    font-size: 13px;
+    padding: 13px 0;
+    color: #555555;
+    padding: 0.94em 0.8em;
+}
+
+.field_address option {
+    font-size: 15px;
+}
+
 
 /* input {
     writing-mode: horizontal-tb !important;
@@ -173,15 +229,85 @@
     cursor: text;
 } */
 
-
-
-
-
 .sidebar {
-    width: 35%;   
+    width: 35%;
     background-color: #fafafa;
-    border-left: #717171;
+    border-left: #cebfbf;
     color: #717171;
     position: relative;
     display: block;
 }
+
+.order-summary__section--product-list {
+    border-bottom: 1px solid #cebfbf;
+}
+
+.product {
+    width: 100%;
+    border-bottom: 1px solid #cebfbf;
+    /* height: 80px; */
+}
+
+.product-thumbnail {
+    padding: 10px 5px;
+}
+
+.product__image {
+    width: 20%;
+}
+
+.product-thumbnail__wrapper {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.product-thumbnail__quantity {
+    position: absolute;
+    top: -6px;
+    right: -5px;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    background: #eeecf0;
+    border-radius: 15px;
+}
+
+.product__description {
+    width: 255px;
+    float: left;
+    font-weight: 550;
+}
+
+.product_checkout_price {
+    /* width: 30%; */
+    float: left;
+    color: #ee4d2d;
+}
+
+.total-line__price {
+    color: #ee4d2d;
+}
+
+.field__input-btn-wrapper {
+    height: 100px;
+    border-bottom: 1px solid #cebfbf;
+}
+
+.field__input-btn-wrapper .field__input-wrapper {
+    float: left;
+}
+
+.btn_discount {
+    float: left;
+    margin-top: 32px;
+}
+
+.total-line-table {
+    width: 100%;
+}
+
+
+/* .total-line__price {
+    margin-left: 20px;
+} */

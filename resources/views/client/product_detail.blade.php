@@ -1,4 +1,4 @@
-    @extends('layouts.master')
+@extends('layouts.master')
 
 @section('content')
  
@@ -10,7 +10,7 @@
         </div>
         <div class="product-detail">
             <div class="product-detail__left">
-                <img src="{{ asset('./img/spx2/spx2-11.png') }}" alt="" class="product-detail__left--large">
+                <img src="{{ asset($product->thumbnail) }}" alt="" class="product-detail__left--large">
                 <div class="product-detail__left--bottom">
                     <a href="#" class="product-detail__left--item product-detail__left--active">
                         <img src="{{asset('img/spx2/spx2-11.png')}}" alt="" class="product-detail__left--img">
@@ -46,7 +46,7 @@
                     <div class="product-detail__right--btn">
                             @csrf
                             <button type="submit"  class="btn btn--buy" > Thêm Vào Giỏ Hàng </button>
-                            <a href="{{ route('home')}}" class="btn btn--buy" > Tiếp Tục Mua Hàng</a>
+                            <a href="{{ route('products')}}" class="btn btn--buy" > Tiếp Tục Mua Hàng</a>
                             {{-- <a href="" class="btn btn--heart btn--show"><i class="fas fa-heart"></i></a> --}}
                     </div>
                 </form>
@@ -87,152 +87,152 @@
                         class="fas fa-chevron-right"></i></a>
             </div>
         </div>
-        <div class="product-same">
-            <div class="product-same__inner">
-                <div class="product-same__list">
+            <div class="product-same">
+                <div class="product-same__inner">
+                    <div class="product-same__list">
 
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-7.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-7.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
+
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-8.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-8.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-9.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-9.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-10.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-10.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+                        <div class="product__card product__card--large">
+                            <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
+                            <div class="product__interactive">
+                                <h3 class="product__status product__status--new">New</h3>
+                                <div class="product__btn">
+                                    <a href="#" class="btn btn--buy">MUA NGAY</a>
+                                    <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                                </div>
 
-                    </div>
-                    <div class="product__card product__card--large">
-                        <img src="{{asset('img/spx2/spx2-1.png')}}" alt="">
-                        <div class="product__interactive">
-                            <h3 class="product__status product__status--new">New</h3>
-                            <div class="product__btn">
-                                <a href="#" class="btn btn--buy">MUA NGAY</a>
-                                <a href="#" class="btn btn--show"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="product__content">
+                                <h4 class="product__name">Cây xương rồng </h4>
+                                <h4 class="product__price">320.000₫ <span
+                                        class="product__price--old">450.000₫</span> </h4>
                             </div>
 
                         </div>
-                        <div class="product__content">
-                            <h4 class="product__name">Cây xương rồng </h4>
-                            <h4 class="product__price">320.000₫ <span
-                                    class="product__price--old">450.000₫</span> </h4>
-                        </div>
+
 
                     </div>
-
-
                 </div>
-            </div>
 
-        </div>
+            </div>
     </div>
 </div>
 

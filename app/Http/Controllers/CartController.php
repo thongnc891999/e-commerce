@@ -15,10 +15,8 @@ class CartController extends Controller
     {
         $data = [];
         $carts = session('carts');
-        // session()->forget('carts');
-        // session()->save();
-        // dd(session('carts'));
         $data['carts'] = $carts;
+        
         return view('client.carts', $data);
     }
 
@@ -74,39 +72,6 @@ class CartController extends Controller
         return redirect()->route('cart')->with('success', 'Add sản phẩm vào Giỏ hàng thành công.');
     }
 
-    // public function updateQuantity($productId, Request $request)
-    // {
-    //     $carts = session('carts') ?? [];
-    //     if (empty($carts)) {
-    //         return redirect()->route('client.carts')->with('error', 'Cart chưa có sản phẩm nào cả.');
-    //     }
-
-    //     $productDB = Product::findOrFail($productId);
-    //     $quantityDB = $productDB->quantity;
-
-    //     $quantityUser = $request->quantity;
-
-    //     // Check Quantity
-    //     // Kiểm tra tồn kho: nếu $quantityUser gửi lên vượt số lượng có trong kho ($quantityDB)
-    //     // thì sẽ thông báo lỗi.
-    //     if ($quantityDB < $quantityUser) {
-    //         return back()->with('error', 'Sản phẩm này đã hết hàng. Vui lòng chọn một sản phẩm khác.');
-    //     }
-
-    //     // Validate OK (check quantity OK)
-    //     // thì lưu quantity mà user gửi lên vào Session
-    //     $quantityUpdate = $quantityUser;
-
-    //     // Update quantity into Cart
-    //     $carts[$productId]['quantity'] = $quantityUpdate;
-
-    //     // Update Session
-    //     session(['carts' => $carts]);
-
-    //     // return về trang danh sách sản phẩm có trong Cart
-    //     return redirect()->route('cart')->with('success', 'Update quantity thành công.');
-    // }
-
     public function removeProduct($productId)
     {
         $carts = session('carts');
@@ -116,11 +81,10 @@ class CartController extends Controller
     return redirect()->back();
     }
 
-    public function checkoutCart()
+    public function showCheckoutCart()
     {
         $carts = session('carts') ?? [];
-        // dd($carts);
-
+        
         return view('client.checkout')->with([
             'carts' => $carts,
         ]);

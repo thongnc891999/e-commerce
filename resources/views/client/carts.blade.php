@@ -32,7 +32,10 @@
                 <span>Giỏ Hàng</span>
             </div>
             <div class="cart">
-                <h3 class="cart__title">GIỎ HÀNG</h3>
+                <div class="cart_head">
+                    <h3 class="cart__title">GIỎ HÀNG</h3>
+                    <a href="{{ route('products')}}" title="Continue Shopping" class="continue">Tiếp tục mua hàng</a>
+                </div>    
                 <table class="cart__table">
                     <thead>
                         <th>HÌNH ẢNH</th>
@@ -51,24 +54,20 @@
                         @foreach ($carts as $value)
                             @php
                                 $productInfo = $value['product_info'];
-                                $productName = $productInfo->name;
-                                $productThumbnail = $productInfo->thumbnail;
-                                $productPrice = $productInfo->price;
-                                $money = $productPrice * $value['quantity'];
-
-                                // update $totalMoney, $totalQuantity
-                                $totalQuantity = $totalQuantity + $value['quantity'];
+                                $money = $productInfo->price * $value['quantity'];
                                 $totalMoney = $totalMoney + $money;
                             @endphp
                         <tr>
                             <th>
-                                <img src="./img/spx2/spx2-1.png" alt="">
+                                <img src="{{ asset($productInfo->thumbnail)}}" alt="{{ asset($productInfo->thumbnail)}}">
                             </th>
                             <th>
-                                <span>{{$productName}}</span>
+                                <span>{{$productInfo->name}}</span>
                             </th>
                             <th>
-                                <span>{{number_format($productPrice).'₫' }}</span>
+                                <span>
+                                    {{$productInfo->price .'₫' }}
+                                </span>
                             </th>
                             <th>
                                 <div class="order-option">
@@ -86,7 +85,7 @@
                                 </div>
                             </th>
                             <th class="productPrice{{ $value['product_id']; }}">
-                                {{ number_format($money).'₫' }} 
+                                {{$money}} 
                             </th>
                             <th> <a href="{{ route('remove_product',['product_id' => $productInfo->id])}}"><i class="fas fa-trash-alt"></i></a></th>
 
@@ -100,23 +99,10 @@
                             <th>
                                 TỔNG TIỀN
                             </th>
-                            <th>
-                                {{ number_format($totalMoney).'₫' }} 
-                            </th>
+                            <th class="totalPrice" data-totalprice="{{$totalMoney}}">
+                                {{$totalMoney}} 
+                            </th>   
                         </tr>
-                        <tr>
-                            <th>
-                                GIẢM GIÁ
-                            </th>
-                            <th>
-                                20.000₫
-                            </th>
-
-                        </tr>
-                        <tfoot>
-                            <th>TỔNG PHẢI THANH TOÁN</th>
-                            <th>250.000 ₫</th>
-                        </tfoot>
                     </table>
                     <div class="cart__pay--btn">
                         <a href="{{ route('checkout.show') }}" class="cart__btn--pay">THANH TOÁN</a>

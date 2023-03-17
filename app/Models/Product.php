@@ -30,43 +30,31 @@ class Product extends Model
         'category_id',
     ];
     
-
+    // 1 sản phẩm sẽ chỉ thuộc về 1 thể loại
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
     
-    public function product_images(){
+    // 1 sản phẩm sẽ có nhiều hình ảnh
+    public function productImages(){
         return $this->hasMany(ProductImage::class);
     }
 
-    // public function product_detail(){
-    //     return $this->hasOne(ProductDetail::class);
-    // }
-    
-    /**
-     * Get the post_detail for the post.
-     */
-    public function price()
-    {
-        return $this->hasOne(Price::class);
-    }
-    
-    public function order_detail()
+
+    // 1 sản phẩm sẽ có nhiều chi tiết đơn hàng
+    public function orderDetails()
     {
         return $this->hasMany(OrderDetail::class);
     }
 
-    public function productPromotion()
+    // 1 sản phẩm sẽ có nhiều khuyến mãi
+    public function productDiscounts()
     {
-        return $this->belongsTo(ProductPromotion::class);
+        return $this->hasMany(ProductDiscount::class);
     }
 
-    public function  promotions()
-    {
-        return $this->belongsToMany(Promotion::class);
-    }
-
+    // 1 sản phẩm sẽ có nhiều comment
     public function  comments()
     {
         return $this->hasMany(Comment::class);

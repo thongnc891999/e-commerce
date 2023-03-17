@@ -25,31 +25,49 @@
     <div class="header__body">
         <div class="container header--inner">
             <div class="header__body--left">
-                <a href="./home.html"> <img src="./img/logo.png" alt="" class="logo"></a>
-                <a href="./home.html"> <img src="./img/beside_logo.png" alt="" class="sub_logo"></a>
+                <a href="./home.html"> <img src="{{ asset('./img/logo.png')}}" alt="" class="logo"></a>
+                <a href="./home.html"> <img src="{{ asset('./img/beside_logo.png')}}" alt="" class="sub_logo"></a>
             </div>
             <div class="header__body--right">
                 <div class="header__body--mid">
-                    <p><i class="fas fa-phone-alt"></i>Hỗ trợ : (04) 6674 2332 - (04) 3786 8904</p>
+                    <p><i class="fas fa-phone-alt"></i>Hỗ trợ : (+84)388 606 414</p>
                     <form action="{{ route('search')}}" method="get">
                         <div class="header__body--search">
-                            <input type="text" class="header__body--search" placeholder="Tìm kiếm...">
+                            <input type="text" class="header__body--search" name="keyword" placeholder="Tìm kiếm..." value="{{ request()->keyword}}">
                             <button type="submit" class="fa-search"><i class="fas fa-search"></i></button>
                         </div>
                     </form>
-                    
-
                 </div>
                 <div class="header__body--cart">
                     <a href="{{route('cart')}}"><i class="fas fa-shopping-cart"></i></a>
                     <p>Giỏ Hàng (<span class="cartQty">{{ $cartQty }}</span>)</p>
                 </div>
-
+                @if (auth()->check())
+                <div class="dropdown">
+                    <button class="dropbtn"><i class="fas fa-user-alt"></i>
+                        <span>{{ auth()->user()->name ?? '' }}</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Thông tin cá nhân</a>
+                        <a href="#">Lịch sử mua hàng</a>
+                        <form action="{{ route('logout')}}" method="post">
+                            @csrf
+                            <button type="submit" class="btn_logout">Đăng xuất</button>
+                        </form>
+                    </div>
+                </div>
+                @else
+                    <div class="header__head--right">
+                        <a href="{{ route('login')}}"><i class="fas fa-user-alt"></i>Đăng nhập</a>
+                        <a href="{{ route('register')}}"><i class="fas fa-user-plus"></i>Đăng ký</a>
+                    </div>
+                @endif
+                
             </div>
         </div>
     </div>
     <div class="logo__mobile">
-        <a href="./home.html"> <img src="./img/logo.png" alt=""></a>
+        <a href="./home.html"> <img src="{{ asset('./img/logo.png')}}" alt=""></a>
     </div>
 
     <div class="menu_mobile">

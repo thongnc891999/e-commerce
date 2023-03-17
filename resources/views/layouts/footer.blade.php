@@ -21,7 +21,7 @@
     <div class="footer__menu-footer">
         <div class="container">
             <div class="menu__item">
-                <img src="./img/logo.png" alt="" class="logo">
+                <img src="{{ asset('./img/logo.png')}}" alt="" class="logo">
                 <p>Mang cả không gian xanh vào ngôi nhà của bạn!</p>
                 <a href="tel:+8418006750">1800 6750</a>
                 <a href="mailto:support@sapo.vn">support@sapo.vn</a>

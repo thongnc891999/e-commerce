@@ -1,266 +1,107 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100;1,300&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100;1,500;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <title>Register</title>
-    <script src="./js/jquery.min.js"></script>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/home/style_home.css">
-    <link rel="stylesheet" href="./css/style_header_footer.css">
-    <link rel="stylesheet" href="./css/register/style_register.css">
-    <script src="./js/header_footer/menu_library.js"></script>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Laravel 8 Admin Auth - laravelcode.com</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+    
+.overview{
+    background-image: url("{{ asset('img/login/register.jpg')}}");
+}
+.login-form {
+    width: 350px;
+    margin: 100px auto;
+  	font-size: 15px;
+}
+.login-form form {
+    margin-bottom: 15px;
+    background: #fffff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 20%;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+</style>
 </head>
-
-<body>
-    <div class="wrapper">
-
-        <div class="header">
-
-            <div class="header__head">
-                <div class="container header--inner">
-                    <div class="header__head--left">
-                        <p><i class="fas fa-clock"></i>Open time: 8:00 - 18:00 Monday - Sunday</p>
-                        <div class="header__head--social">
-                            <ul class="social__list">
-                                <li class="social__item"> <a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li class="social__item"> <a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li class="social__item"> <a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li class="social__item"> <a href="#"><i class="fab fa-whatsapp"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header__head--right">
-                        <a href="./login.html"><i class="fas fa-user-alt"></i>Đăng nhập</a>
-                        <a href="./register.html"><i class="fas fa-user-plus"></i>Đăng ký</a>
-
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="header__body">
-                <div class="container header--inner">
-                    <div class="header__body--left">
-                        <a href="./home.html"> <img src="./img/logo.png" alt="" class="logo"></a>
-                        <a href="./home.html"> <img src="./img/beside_logo.png" alt=""></a>
-                    </div>
-                    <div class="header__body--right">
-                        <div class="header__body--mid">
-                            <p><i class="fas fa-phone-alt"></i>Hỗ trợ : (04) 6674 2332 - (04) 3786 8904</p>
-                            <div class="header__body--search">
-                                <input type="text" class="header__body--search" placeholder="Tìm kiếm...">
-                                <i class="fas fa-search"></i>
-                            </div>
-
-                        </div>
-                        <div class="header__body--cart">
-                            <a href="./cart.html"><i class="fas fa-shopping-cart"></i></a>
-                            <p>0 Sản phẩm</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="logo__mobile">
-                <a href="./home.html"> <img src="./img/logo.png" alt=""></a>
-            </div>
-
-            <div class="menu_mobile">
-
-                <div class="container">
-                    <a href=""><i class="fas fa-bars"></i></a>
-                    <div class="menu_mobile-right">
-                        <a href=""> <i class="fas fa-search"></i> </a>
-                        <a href="./cart.html"><i class="fas fa-shopping-basket"></i></a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="header__menu">
-                <div class="container">
-                    <ul class="menu__list">
-                        <li class="menu__item">
-                            <i class="fas fa-bars"></i>
-                        </li>
-                        <li class="menu__item">
-                            <a href="./home.html">Trang chủ</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#">Giới thiệu</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="./products.html">Sản phẩm </a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#">Sản phẩm mới</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="./news.html">Tin tức</a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="./contact.html">Liên hệ</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-
+<body class="overview">
+<div class="login-form">
+    <form action="{{ route('register') }}" method="post">
+    	{!! csrf_field() !!}
+        <h2 class="text-center">Đăng ký</h2>
+        @if(\Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ \Session::get('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+            </button>
         </div>
-        <div class="body">
-            <div class="container">
-                <div class="link-page">
-                    <h4>Home / <a href=""> Đăng kí</a></h4>
-                    <div class="register">
-                        <div class="register__title">
-                            THÔNG TIN CÁ NHÂN
-                        </div>
-
-                        <form action="" method="post" class="register__form">
-                            <div class="register__form--group">
-                                <label for="register__form--name">Họ và tên <span>*</span></label>
-                                <input type="text" id="register__form--name" name="register__form--name">
-                            </div>
-                            <div class="register__form--group">
-                                <label for="register__form--phone">Số ĐT <span>*</span></label>
-                                <input type="text" id="register__form--phone" name="register__form--phone">
-                            </div>
-                            <div class="register__form--group">
-                                <label for="register__form--email">Địa chỉ email <span>*</span></label>
-                                <input type="text" id="register__form--email" name="register__form--email">
-                            </div>
-                            <div class="register__form--group">
-                                <label for="register__form--web">Website của bạn <span>*</span></label>
-                                <input type="text" id="register__form--web" name="register__form--web">
-                            </div>
-                            <div class="register__form--notice">
-
-                                <input type="checkbox" name="notice" id="notice">
-                                <label for="notice">Đăng ký nhận thông tin qua email</label>
-                            </div>
-                            <div class="register__title">
-                                THÔNG TIN TÀI KHOẢN
-                            </div>
-                            <div class="register__form--group">
-                                <label for="register__form--password">Mật khẩu <span>*</span></label>
-                                <input type="password" id="register__form--password" name="register__form--password">
-                            </div>
-                            <div class="register__form--group">
-                                <label for="register__form--re-password">Nhập lại mật khẩu <span>*</span></label>
-                                <input type="password" id="register__form--re-password"
-                                    name="register__form--re-password">
-                            </div>
-                            <div class="register__form--btn">
-                                <a href="" class="btn btn--back">QUAY LẠI</a>
-                                <a href="" class="btn btn--register">ĐĂNG KÍ</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        @endif
+        {{ \Session::forget('success') }}
+        @if(\Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ \Session::get('error') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+            </button>
         </div>
-
-        <div class="footer">
-            <div class="footer__contact">
-                <div class="container  footer__contact--inner">
-                    <div class="social">
-                        <h3 class="social__title">kÊNH THÔNG TIN TỪ CHÚNG TÔI :</h3>
-                        <div class="social__list">
-                            <a href="" class="social__item"> <i class="fab fa-facebook"></i></a>
-                            <a href="" class="social__item"> <i class="fab fa-twitter"></i></a>
-                            <a href="" class="social__item"> <i class="fab fa-youtube"></i></a>
-                            <a href="" class="social__item"> <i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="email">
-                        <h3>ĐĂNG KÍ NHẬN EMAIL TỪ CHÚNG TÔI</h3>
-                        <input type="text" placeholder="Enter your email...">
-                        <a href=""><i class="fas fa-paper-plane"></i></a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="footer__menu-footer">
-                <div class="container">
-                    <div class="menu__item">
-                        <img src="./img/logo.png" alt="" class="logo">
-                        <p>Mang cả không gian xanh vào ngôi nhà của bạn!</p>
-                        <a href="tel:+8418006750">1800 6750</a>
-                        <a href="mailto:support@sapo.vn">support@sapo.vn</a>
-                    </div>
-                    <div class="menu__item">
-                        <h3 class="menu__title">VỀ CHÚNG TÔI</h3>
-                        <a href="#">Trang chủ</a>
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Sản phẩm</a>
-                        <a href="#">Tin tức</a>
-                        <a href="#">Liên hệ</a>
-
-                    </div>
-                    <div class="menu__item">
-                        <h3 class="menu__title">ĐIỀU KHOẢN</h3>
-                        <a href="#">Trang chủ</a>
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Sản phẩm</a>
-                        <a href="#">Tin tức</a>
-                        <a href="#">Liên hệ</a>
-
-                    </div>
-                    <div class="menu__item">
-                        <h3 class="menu__title">HƯỚNG DẪN</h3>
-                        <a href="#">Trang chủ</a>
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Sản phẩm</a>
-                        <a href="#">Tin tức</a>
-                        <a href="#">Liên hệ</a>
-
-                    </div>
-                    <div class="menu__item">
-                        <h3 class="menu__title">CHÍNH SÁCH</h3>
-                        <a href="#">Trang chủ</a>
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Sản phẩm</a>
-                        <a href="#">Tin tức</a>
-                        <a href="#">Liên hệ</a>
-
-                    </div>
-
-                </div>
-            </div>
-            <div class="footer__menu-infor">
-                <div class="container">
-                    <div class="infor__list">
-                        <a href="#">Trang chủ</a>
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Sản phẩm</a>
-                        <a href="#">Tin tức</a>
-                        <a href="#">Liên hệ</a>
-                    </div>
-                    <div class="infor__pay">
-                        <a href="#"><i class="fab fa-cc-visa"></i></a>
-                        <a href="#"><i class="fab fa-cc-stripe"></i></a>
-                        <a href="#"><i class="fab fa-cc-paypal"></i></a>
-                        <a href="#"><i class="fab fa-cc-mastercard"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__copyright">
-                <p>© Bản quyền thuộc về wiliam1307</p>
-            </div>
+        @endif   
+        <!-- Name -->
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Họ và tên" required="required">
+            @if ($errors->has('name'))
+            <span class="help-block font-red-mint">
+                <strong>{{ $errors->first('name') }}</strong>
+            </span>
+            @endif
+        </div>  
+        <!-- Email Address -->  
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+            @if ($errors->has('email'))
+            <span class="help-block font-red-mint">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+            @endif
         </div>
-    </div>
-
+        <!-- Password -->
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Mật khẩu" required="required">
+            @if ($errors->has('password'))
+            <span class="help-block font-red-mint">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+            @endif
+        </div>
+         <!-- Confirm Password -->
+        <div class="form-group">
+            <input type="password" class="form-control" name="password_confirmation" placeholder="Nhập lại mật khẩu" required="required">
+            @if ($errors->has('password'))
+            <span class="help-block font-red-mint">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+            @endif
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
+        </div>           
+    </form>
+</div>
 </body>
-
 </html>
